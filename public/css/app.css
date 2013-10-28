@@ -187,3 +187,18 @@ label {
   width: 360px;
   z-index: 3;
 }
+
+/* line 1, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.actionbar__logo {
+  width: 245px;
+}
+
+/* line 6, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.actionbar__nav__control.is-active {
+  color: #ccee14;
+  text-shadow: 0 1px 10px #a5c10e;
+}
+/* line 9, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.actionbar__nav__control.is-active:hover {
+  text-shadow: 0 1px 20px #a5c10e;
+}
