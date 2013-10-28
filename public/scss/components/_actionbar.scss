@@ -8,35 +8,41 @@
 	z-index: 3;
 }
 
-.actionbar a {
+.actionbar__logo {
+	background: transparent url("/images/logo--light.png") 0 0 no-repeat;
+	@include hide-text('left');
+	float: left;
+	height: 60px;
+	width: 182px;
+}
+
+.actionbar__nav {
+	margin: 0;
+	padding: 0; 
+	text-align: right;
+
+	li {
+		display: inline-block;
+		margin: 0 0.5em;
+	}
+}
+
+.actionbar__nav__control {
 	color: rgba(#fff, 0.3);
 	display: block;
 	line-height: 60px;
 	text-decoration: none;
 	transition: 0.3s all;
-}
 
-a.actionbar__logo {
-	line-height: 1;
-	padding: 1em 0;
-	float: left;
-}
+	&:hover {
+		color: rgba(#fff, 0.5);
+	}
 
-.actionbar__nav {
-	margin: 0;
-	padding: 0;
-	text-align: right;
-}
+	&.is-active {
+		color: #3AF;
 
-.actionbar__nav li {
-	display: inline-block;
-	margin: 0 0.5em;
-}
-
-.actionbar__nav__control.is-active {
-	color: #c33;
-}
-
-.actionbar__nav__control:hover {
-	color: #e55;
+		&:hover {
+			text-shadow: 0 1px 5px darken(#3AF, 10%);
+		}
+	}
 }
