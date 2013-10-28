@@ -45,3 +45,26 @@ label {
 .form__footer {
 	margin-top: 2em;
 }
+
+.field--horizontal {
+	@include clearfix();
+
+	label {
+		background: #fff;
+		float: left;
+		line-height: 50px;
+		padding: 0 0.5em;
+		text-align: center;
+	}
+
+	.input--text {
+		float: left;
+		padding: 0;
+		width: 52%;
+	}
+ 
+	.btn {
+		float: right;
+		width: 30%;
+	}
+}

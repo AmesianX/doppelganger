@@ -8,7 +8,7 @@ define([
 	'hbars!../templates/lobby'
 ], function(App, template) {
 	return Marionette.ItemView.extend({
-		className : 'menu modal',
+		className : 'menu modal is-flipped',
 		tagName   : 'menu',
 		template  : template,
 

@@ -1,4 +1,3 @@
-@import url(../icons/style.css);
 /**
  * Doppleganger
  */
@@ -12,10 +11,78 @@
 /* line 5, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/_base.scss */
 body {
   background: #091f27;
-  font: 18px/1 Helvetica, sans-serif;
+  font: 18px/1 "Open Sans", sans-serif;
   height: 100%;
   padding: 0;
   margin: 0;
+}
+
+/* line 13, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/_base.scss */
+h1, h2, h3, h4, h5 {
+  font-weight: 100;
+  line-height: 1;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* line 20, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/_base.scss */
+h3 {
+  font-size: 36px;
+}
+
+/* line 24, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/_base.scss */
+p {
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("/fonts/icon/icomoon.eot");
+  src: url("/fonts/icon/icomoon.eot?#iefix") format("embedded-opentype"), url("/fonts/icon/icomoon.ttf") format("truetype"), url("/fonts/icon/icomoon.woff") format("woff"), url("/fonts/icon/icomoon.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 12, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/utilities/_icons.scss */
+.icon, [class*="icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 26, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/utilities/_icons.scss */
+.icon-chat:before {
+  content: "\e600";
+}
+
+/* line 29, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/utilities/_icons.scss */
+.icon-settings:before {
+  content: "\e601";
+}
+
+/* line 32, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/utilities/_icons.scss */
+.icon-mute:before {
+  content: "\e602";
+}
+
+/* line 35, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/utilities/_icons.scss */
+.icon-camera:before {
+  content: "\e603";
+}
+
+@font-face {
+  font-family: 'League Gothic';
+  src: url("/fonts/league_gothic/leaguegothic-regular-webfont.eot");
+  src: url("/fonts/league_gothic/leaguegothic-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/league_gothic/leaguegothic-regular-webfont.woff") format("woff"), url("/fonts/league_gothic/leaguegothic-regular-webfont.ttf") format("truetype"), url("/fonts/league_gothic/leaguegothic-regular-webfont.svg#league_gothicregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* line 1, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/utilities/_hidden.scss */
@@ -160,6 +227,31 @@ label {
   margin-top: 2em;
 }
 
+/* line 49, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/components/_forms.scss */
+.field--horizontal {
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 52, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/components/_forms.scss */
+.field--horizontal label {
+  background: #fff;
+  float: left;
+  line-height: 50px;
+  padding: 0 0.5em;
+  text-align: center;
+}
+/* line 60, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/components/_forms.scss */
+.field--horizontal .input--text {
+  float: left;
+  padding: 0;
+  width: 52%;
+}
+/* line 66, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/components/_forms.scss */
+.field--horizontal .btn {
+  float: right;
+  width: 30%;
+}
+
 /* line 1, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/components/_honeycomb.scss */
 .honeycomb {
   height: 100%;
@@ -189,16 +281,257 @@ label {
 }
 
 /* line 1, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+body {
+  color: #491d22;
+}
+
+/* line 5, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+h1, h2, h3, h4, h5 {
+  color: #491d22;
+  font-family: 'League Gothic', sans-serif;
+}
+
+/* line 10, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
 .actionbar__logo {
   width: 245px;
 }
 
-/* line 6, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 15, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
 .actionbar__nav__control.is-active {
   color: #ccee14;
   text-shadow: 0 1px 10px #a5c10e;
 }
-/* line 9, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 18, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
 .actionbar__nav__control.is-active:hover {
   text-shadow: 0 1px 20px #a5c10e;
+}
+
+/* line 24, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.modal {
+  height: 568px;
+  width: 798px;
+  margin-left: -399px;
+}
+
+/* line 30, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.menu {
+  font-size: 18px;
+  line-height: 1.5;
+  padding: 0;
+}
+
+/* line 36, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.menu__backface {
+  background: url("/images/postcard--back.jpg") 0 0 no-repeat;
+  height: 100%;
+  left: 0;
+  padding: 50px;
+  position: absolute;
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+  top: 0;
+  width: 100%;
+}
+
+/* line 47, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.btn {
+  background: url("/images/btn--back.jpg") 50% 50%;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-top-color: rgba(255, 255, 255, 0.2);
+  border-bottom-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0;
+  color: #f3f7e1;
+  font-family: 'League Gothic';
+  font-size: 24px;
+  height: 52px;
+  line-height: 42px;
+  text-transform: uppercase;
+}
+
+/* line 61, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.field--horizontal label, .input--text {
+  background: rgba(255, 255, 255, 0.54);
+}
+
+/* line 65, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.field--horizontal label {
+  color: #491e22;
+  font-family: 'League Gothic';
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+/* line 72, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.input--text {
+  color: #0e3166;
+}
+
+/* line 76, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.is-flipped {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+
+/* line 80, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.halloween__menu__header {
+  margin-bottom: 1em;
+  max-width: 70%;
+}
+
+/* line 85, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.halloween__menu__instructions {
+  margin: 0 0 1em;
+  padding: 0;
+  text-align: center;
+}
+/* line 90, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.halloween__menu__instructions li {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 32%;
+}
+
+/* Parallax Components */
+/* line 102, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.halloween__scene {
+  background: url("/images/halloween/background.jpg") 0 1200px;
+}
+
+/* line 106, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.halloween__house {
+  background: url("/images/halloween/house.png") no-repeat;
+  left: 62%;
+  height: 246px;
+  position: absolute;
+  top: 400px;
+  width: 199px;
+}
+
+/* line 115, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.halloween__moon, .halloween__witch {
+  left: 69%;
+  position: absolute;
+  top: -100px;
+  height: 479px;
+  width: 522px;
+}
+
+/* line 123, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.halloween__moon {
+  background: url("/images/halloween/moon.png") no-repeat;
+}
+
+/* line 127, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.halloween__witch {
+  background: url("/images/halloween/witch.png") no-repeat;
+}
+
+/* line 131, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.halloween__cloud {
+  background: url("/images/halloween/cloud.png");
+  height: 1220px;
+  position: absolute;
+  right: -100px;
+  top: 0;
+  width: 1721px;
+}
+
+/* line 140, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.halloween__ghost {
+  background: url("/images/halloween/ghost.png") no-repeat;
+  height: 449px;
+  left: 590px;
+  position: absolute;
+  top: 30px;
+  width: 189px;
+}
+
+/* line 149, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.halloween__ghoul {
+  background: url("/images/halloween/ghoul.png") no-repeat;
+  bottom: 0;
+  height: 672px;
+  left: 27%;
+  margin-bottom: -200px;
+  position: absolute;
+  width: 418px;
+}
+
+/* line 159, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.halloween__trees--left {
+  background: url("/images/halloween/trees_left.png") no-repeat;
+  height: 453px;
+  position: absolute;
+  left: -100px;
+  top: 93px;
+  width: 329px;
+}
+
+/* line 168, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.halloween__trees--right {
+  background: url("/images/halloween/trees_right.png") no-repeat;
+  height: 490px;
+  position: absolute;
+  top: 143px;
+  right: -100px;
+  width: 401px;
+}
+
+/* line 177, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.halloween__bats--back {
+  background: url("/images/halloween/bats_back.png") no-repeat;
+  height: 86px;
+  right: 20%;
+  position: absolute;
+  top: 336px;
+  width: 93px;
+}
+
+/* line 186, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.halloween__bats--front {
+  background: url("/images/halloween/bats_front.png") no-repeat;
+  left: 10%;
+  position: absolute;
+  height: 132px;
+  top: 170px;
+  width: 73px;
+}
+
+/* line 195, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.halloween__hill--back {
+  background: url("/images/halloween/hill_back.png") no-repeat;
+  height: 1220px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1721px;
+}
+
+/* line 204, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.halloween__hill--middle {
+  background: url("/images/halloween/hill_middle.png") no-repeat;
+  height: 1220px;
+  position: absolute;
+  right: -100px;
+  top: 0;
+  width: 1721px;
+}
+
+/* line 213, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+.halloween__hill--front {
+  background: url("/images/halloween/hill_front.png") no-repeat;
+  height: 1220px;
+  left: -100px;
+  position: absolute;
+  top: 0;
+  width: 1721px;
 }
