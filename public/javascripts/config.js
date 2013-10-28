@@ -39,10 +39,6 @@ var require = {
 		marionette: {
 			deps: ['backbone'],
 			exports: 'Marionette'
-		},
-
-		simplewebrtc: {
-			exports: 'SimpleWebRTC'
 		}
 	},
 	stubModules: ['text', 'hbars'],
