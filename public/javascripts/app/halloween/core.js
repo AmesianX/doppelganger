@@ -13,10 +13,9 @@ define([
 	});
 
 	var scene = new Scene({
+		el: '.halloween__scene',
 		collection: App.request('connection:streams')
 	});
-
-	App.body.show(scene);
 
 	Halloween.on('start', function() {
 		scene.play();

@@ -13,7 +13,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/:room', function(req, res) {
-	return res.render('room', {
+	return res.render('index', {
 		development: isDevelopment
 	});
 });

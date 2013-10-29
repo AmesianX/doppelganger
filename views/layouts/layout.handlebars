@@ -9,7 +9,9 @@
 <body>
 	<div id="region--navigation"></div>
 	<div id="region--modal"></div>
-	<div id="region--body"></div>
+	<div id="region--body">
+		{{{body}}}
+	</div>
 
 	<script src="/javascripts/vendor/socket.io.js"></script>
 
@@ -17,7 +19,16 @@
 		<script src="/javascripts/config.js"></script>
 		<script data-main="/javascripts/setup.js" src="/javascripts/vendor/require.js"></script>
 	{{else}}
-    	<script src="/javascripts/build/doppelganger.min.js"></script>
+		<script src="/javascripts/build/doppelganger.min.js"></script>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-45263100-1', 'haunted-hills.com');
+			ga('send', 'pageview');
+    	</script>
 	{{/if}}
 </body>
 </html>

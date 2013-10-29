@@ -5,8 +5,11 @@ module.exports = function(grunt) {
 		compass: {
 			dist: {
 				options: {
-					sassDir: 'public/scss',
-					cssDir: 'public/css'
+					basePath: 'public',
+					imagesDir: 'images',
+					sassDir: 'scss',
+					cssDir: 'css',
+					outputStyle: 'compressed'
 				}
  			}
 		},
@@ -14,7 +17,7 @@ module.exports = function(grunt) {
 		jquery: {
 			dist: {
 				options: {
-					prefix: "jquery-",
+					prefix: "jquery-"
 				},
 				output: "public/javascripts/vendor",
 				versions: {

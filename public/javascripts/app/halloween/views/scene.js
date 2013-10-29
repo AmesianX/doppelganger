@@ -1,12 +1,9 @@
 define([
-	'hbars!../templates/scene',
 	'vendor/jquery.parallax'
 ], function(template) {
 	return Marionette.ItemView.extend({
         className: 'scene halloween__scene',
         tagName: 'ul',
-
-		template: template,
 
 		ui: {
 			layers   : '.layer',
@@ -14,11 +11,17 @@ define([
 			canvases : 'canvas'
 		},
 
-		onDomRefresh: function() {
-			this.$el.width(window.innerWidth + 200);
-			this.$el.height(window.innerHeight);
+		initialize: function() {
+			$(window).on('resize.scene', this.resize.bind(this));
+			this.bindUIElements();
+			this.resize();
 			this.$el.parallax();
 		},
+
+		resize: _.throttle(function() {
+			this.$el.width(window.innerWidth);
+			this.$el.height(window.innerHeight);
+		}, 100),
 
 		play: function() {
 			this.videoLoop();

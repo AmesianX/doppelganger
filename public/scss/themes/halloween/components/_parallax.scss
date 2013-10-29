@@ -5,6 +5,8 @@
  *       theme.
  */
 
+@import "halloween/spriteable/*.png";
+
 .layer {
 	height: 100%;
 	left: 0;
@@ -43,12 +45,10 @@
 }
 
 .halloween__house {
-  background: url("/images/halloween/house.png") no-repeat;
   left: 62%;
-  height: 246px;
   position: absolute;
-  top: 400px;
-  width: 199px;
+  @include spriteable-sprite('house', true);
+  top: 450px;
 }
 
 .halloween__moon, .halloween__witch {
@@ -60,12 +60,12 @@
 }
 
 .halloween__moon {
-  background: url("/images/halloween/moon.png") no-repeat;
-}
+	@include spriteable-sprite('moon', true);
+  }
 
 .halloween__witch {
-  background: url("/images/halloween/witch.png") no-repeat;
-}
+	@include spriteable-sprite('witch', true);
+  }
 
 .halloween__cloud {
   background: url("/images/halloween/cloud.png");
@@ -77,58 +77,46 @@
 }
 
 .halloween__ghost {
-  background: url("/images/halloween/ghost.png") no-repeat;
-  height: 449px;
   left: 590px;
   position: absolute;
+  @include spriteable-sprite('ghost', true);
   top: 30px;
-  width: 189px;
 }
 
 .halloween__ghoul {
-  background: url("/images/halloween/ghoul.png") no-repeat;
   bottom: 0;
-  height: 672px;
   left: 27%;
   margin-bottom: -200px;
   position: absolute;
-  width: 418px;
+  @include spriteable-sprite('ghoul', true);
 }
 
 .halloween__trees--left {
-  background: url("/images/halloween/trees--left.png") no-repeat;
-  height: 453px;
-  position: absolute;
-  left: -100px;
-  top: 93px;
-  width: 329px;
+	position: absolute;
+	left: -100px;
+	@include spriteable-sprite('trees--left', true);
+	top: 93px;
 }
 
 .halloween__trees--right {
-  background: url("/images/halloween/trees--right.png") no-repeat;
-  height: 490px;
-  position: absolute;
-  top: 143px;
-  right: -100px;
-  width: 401px;
+	position: absolute;
+	top: 143px;
+	right: -100px;
+	@include spriteable-sprite('trees--right', true);
 }
 
 .halloween__bats--back {
-  background: url("/images/halloween/bats--back.png") no-repeat;
-  height: 86px;
-  right: 20%;
-  position: absolute;
-  top: 336px;
-  width: 93px;
+	right: 20%;
+	position: absolute;
+	@include spriteable-sprite('bats--back', true);
+	top: 336px;
 }
 
 .halloween__bats--front {
-  background: url("/images/halloween/bats--front.png") no-repeat;
-  left: 10%;
-  position: absolute;
-  height: 132px;
-  top: 170px;
-  width: 73px;
+	left: 10%;
+	position: absolute;
+	@include spriteable-sprite('bats--front', true);
+	top: 170px;
 }
 
 .halloween__hill--back {
