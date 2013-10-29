@@ -1,0 +1,20 @@
+@keyframes swipe--left {
+	0% {
+		opacity: 0.2;
+		transform: translate(30%, 0);
+	}
+
+	50% {
+		opacity: 1;
+		transform: translate(0%, 0);
+	}
+
+	100% {
+		opacity: 0.2;
+		transform: translate(-30%, 0);
+	}
+}
+
+.swipe--left {
+	animation: 55s swipe--left infinite;
+}

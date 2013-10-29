@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5 {
 .modal {
 	height: 568px;
 	width: 798px;
-	margin-left: (-798px / 2);
+	margin-left: (-798px / 2);	
 }
 
 .menu {
@@ -35,13 +35,7 @@ h1, h2, h3, h4, h5 {
 
 .menu__backface {
 	background: url("/images/postcard--back.jpg") 0 0 no-repeat;
-	height: 100%;
-	left: 0;
 	padding: 50px;
-	position: absolute;
-	@include transform(rotateY(-180deg));
-	top: 0;
-	width: 100%;
 }
 
 .btn {
@@ -73,34 +67,68 @@ h1, h2, h3, h4, h5 {
 	color: #0e3166;
 }
 
-.is-flipped {
-	@include transform(rotateY(180deg));
-}
-
 .halloween__menu__header {
-	margin-bottom: 1em;
+	margin-bottom: 2em;
 	max-width: 70%;
 }
 
 .halloween__menu__instructions {
-	margin: 0 0 1em;;
+	margin: 0 0 3em;
 	padding: 0;
 	text-align: center;
 
 	li {
+		border-left: 3px solid rgba(#000, 0.13);
 		display: inline-block;
 		list-style: none;
 		margin: 0;
 		padding: 0;
 		text-align: center;
-		width: 32%;
+		width: 32.5%;
+
+		&:first-child {
+			border-left: 0;
+		}
 	}
 }
 
 /* Parallax Components */
 
+.layer {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.mask {
+	@extend .visually-hidden;
+}
+
 .halloween__scene {
-  background: url("/images/halloween/background.jpg") 0 1200px;
+	background: url("/images/halloween/background.jpg") 0 0 repeat-x;
+	left: 0;
+	overflow: hidden;
+	max-height: 100%;
+	max-width: 100%;
+	position: absolute;
+	top: 0;
+
+	&:after {
+		box-shadow: inset 0 0 200px #000;
+		content: "";
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 1;
+	}
+}
+
+.halloween__scene .layer div {
+	@extend .accelerated;
 }
 
 .halloween__house {
@@ -157,7 +185,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .halloween__trees--left {
-  background: url("/images/halloween/trees_left.png") no-repeat;
+  background: url("/images/halloween/trees--left.png") no-repeat;
   height: 453px;
   position: absolute;
   left: -100px;
@@ -166,7 +194,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .halloween__trees--right {
-  background: url("/images/halloween/trees_right.png") no-repeat;
+  background: url("/images/halloween/trees--right.png") no-repeat;
   height: 490px;
   position: absolute;
   top: 143px;
@@ -175,7 +203,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .halloween__bats--back {
-  background: url("/images/halloween/bats_back.png") no-repeat;
+  background: url("/images/halloween/bats--back.png") no-repeat;
   height: 86px;
   right: 20%;
   position: absolute;
@@ -184,7 +212,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .halloween__bats--front {
-  background: url("/images/halloween/bats_front.png") no-repeat;
+  background: url("/images/halloween/bats--front.png") no-repeat;
   left: 10%;
   position: absolute;
   height: 132px;

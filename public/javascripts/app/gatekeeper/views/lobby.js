@@ -8,7 +8,7 @@ define([
 	'hbars!../templates/lobby'
 ], function(App, template) {
 	return Marionette.ItemView.extend({
-		className : 'menu modal is-flipped',
+		className : 'menu modal',
 		tagName   : 'menu',
 		template  : template,
 
@@ -18,6 +18,12 @@ define([
 
 		ui: {
 			'form' : '.form--lobby'
+		},
+
+		onDomRefresh: function() {
+			_.delay(function() {
+				this.$el.addClass('is-flipped');
+			}.bind(this), 1000);
 		},
 
 		joinRoom: function(e) {

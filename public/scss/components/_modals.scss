@@ -2,8 +2,11 @@
 	background: #c7ccce;
 	left: 50%;
 	margin: 0 0 0 -180px;
+	perspective: 1000;
 	position: absolute;
 	top: 25%;
 	width: 360px;
 	z-index: 3;
+
+	@include transition(1s all);
 }

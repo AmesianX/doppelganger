@@ -10,6 +10,7 @@ define(function() {
 			var App = require('app/core');
 
 			App.Connection.stop();
+			App.Halloween.stop();
 			App.Navigation.stop();
 
 			App.Gatekeeper.start();
@@ -20,8 +21,9 @@ define(function() {
 
 			App.Gatekeeper.stop();
 
-			App.Navigation.start();
 			App.Connection.start();
+			App.Halloween.start();
+			App.Navigation.start();
 		}
 	});
 });
