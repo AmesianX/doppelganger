@@ -94,8 +94,7 @@ small {
 .visually-hidden, .mask {
   border: 0;
   clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
+  left: -99999px;
   margin: -1px;
   overflow: hidden;
   position: absolute;
@@ -105,6 +104,20 @@ small {
 /* line 11, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/utilities/_hidden.scss */
 .physically-hidden {
   display: none;
+}
+
+/* line 1, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/utilities/_transformations.scss */
+.accelerated, .halloween__scene .layer div {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 /* line 1, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/effects/_fade-away.scss */
@@ -356,53 +369,42 @@ label {
   transition: 1s all;
 }
 
-/* line 1, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 1, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/_base.scss */
 body {
   color: #491d22;
 }
 
-/* line 5, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 5, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/_base.scss */
 h1, h2, h3, h4, h5 {
   color: #491d22;
   font-family: 'League Gothic', sans-serif;
 }
 
-/* line 10, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* Parallax Components */
+/**
+ * @name Halloween Actionbar
+ * @desc Overrides for the Halloween scene navigator
+ */
+/* line 6, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_actionbar.scss */
 .actionbar__logo {
   width: 245px;
 }
 
-/* line 15, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 10, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_actionbar.scss */
 .actionbar__nav__control.is-active {
   color: #ccee14;
   text-shadow: 0 1px 10px #a5c10e;
 }
-/* line 18, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 14, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_actionbar.scss */
 .actionbar__nav__control.is-active:hover {
   text-shadow: 0 1px 20px #a5c10e;
 }
 
-/* line 24, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
-.modal {
-  height: 568px;
-  width: 798px;
-  margin-left: -399px;
-}
-
-/* line 30, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
-.menu {
-  font-size: 18px;
-  line-height: 1.5;
-  padding: 0;
-}
-
-/* line 36, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
-.menu__backface {
-  background: url("/images/postcard--back.jpg") 0 0 no-repeat;
-  padding: 50px;
-}
-
-/* line 41, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/**
+ * @name Halloween Inputs
+ * @desc Overrides for form controls.
+ */
+/* line 6, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_inputs.scss */
 .btn {
   background: url("/images/btn--back.jpg") 50% 50%;
   border: 5px solid rgba(0, 0, 0, 0.1);
@@ -417,12 +419,12 @@ h1, h2, h3, h4, h5 {
   text-transform: uppercase;
 }
 
-/* line 55, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 20, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_inputs.scss */
 .field--horizontal label, .input--text {
   background: rgba(255, 255, 255, 0.54);
 }
 
-/* line 59, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 24, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_inputs.scss */
 .field--horizontal label {
   color: #491e22;
   font-family: 'League Gothic';
@@ -430,24 +432,77 @@ h1, h2, h3, h4, h5 {
   text-transform: uppercase;
 }
 
-/* line 66, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 31, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_inputs.scss */
 .input--text {
   color: #0e3166;
 }
 
-/* line 70, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* Masks */
+/* line 4, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_masks.scss */
+.halloween__canvas--moon, .halloween__canvas--pumpkin, .halloween__canvas--ghoul {
+  position: absolute;
+  z-index: 3;
+}
+
+/* line 9, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_masks.scss */
+.halloween__canvas--moon {
+  left: 155px;
+  top: 140px;
+}
+
+/* line 15, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_masks.scss */
+.halloween__canvas--pumpkin {
+  right: 240px;
+  top: 690px;
+}
+
+/* line 21, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_masks.scss */
+.halloween__canvas--ghoul {
+  right: 50px;
+  top: 0px;
+}
+
+/**
+ * @name Halloween Menu
+ * @desc Overrides for the menu on the halloween theme. Includes
+ *       a flipping animation to show the back of a "post card".
+ */
+/* line 7, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_menu.scss */
+.menu {
+  font-size: 18px;
+  height: 568px;
+  line-height: 1.5;
+  left: 50%;
+  margin-left: -399px;
+  padding: 0;
+  position: absolute;
+  top: 20%;
+  width: 798px;
+  -webkit-transition: 1s all;
+  -moz-transition: 1s all;
+  -o-transition: 1s all;
+  transition: 1s all;
+}
+
+/* line 21, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_menu.scss */
+.menu__backface {
+  background: url("/images/postcard--back.jpg") 0 0 no-repeat;
+  padding: 50px;
+}
+
+/* line 26, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_menu.scss */
 .halloween__menu__header {
   margin-bottom: 2em;
   max-width: 70%;
 }
 
-/* line 75, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 31, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_menu.scss */
 .halloween__menu__instructions {
   margin: 0 0 3em;
   padding: 0;
   text-align: center;
 }
-/* line 80, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 36, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_menu.scss */
 .halloween__menu__instructions li {
   border-left: 3px solid rgba(0, 0, 0, 0.13);
   display: inline-block;
@@ -457,13 +512,31 @@ h1, h2, h3, h4, h5 {
   text-align: center;
   width: 32.5%;
 }
-/* line 89, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 45, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_menu.scss */
 .halloween__menu__instructions li:first-child {
   border-left: 0;
 }
 
-/* Parallax Components */
-/* line 97, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/**
+ * @name Halloween Modal
+ */
+/* line 5, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_modal.scss */
+.modal {
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  left: 0;
+  margin: 0;
+  top: 0;
+  width: 100%;
+}
+
+/**
+ * @name Halloween Parallax
+ * @desc Style rules for the parallax effect found
+ *       in the main content area of the Halloween
+ *       theme.
+ */
+/* line 8, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_parallax.scss */
 .layer {
   height: 100%;
   left: 0;
@@ -472,7 +545,7 @@ h1, h2, h3, h4, h5 {
   width: 100%;
 }
 
-/* line 109, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 20, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_parallax.scss */
 .halloween__scene {
   background: url("/images/halloween/background.jpg") 0 0 repeat-x;
   left: 0;
@@ -482,7 +555,7 @@ h1, h2, h3, h4, h5 {
   position: absolute;
   top: 0;
 }
-/* line 118, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 29, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_parallax.scss */
 .halloween__scene:after {
   box-shadow: inset 0 0 200px #000;
   content: "";
@@ -494,7 +567,7 @@ h1, h2, h3, h4, h5 {
   z-index: 1;
 }
 
-/* line 134, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 45, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_parallax.scss */
 .halloween__house {
   background: url("/images/halloween/house.png") no-repeat;
   left: 62%;
@@ -504,7 +577,7 @@ h1, h2, h3, h4, h5 {
   width: 199px;
 }
 
-/* line 143, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 54, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_parallax.scss */
 .halloween__moon, .halloween__witch {
   left: 69%;
   position: absolute;
@@ -513,17 +586,17 @@ h1, h2, h3, h4, h5 {
   width: 522px;
 }
 
-/* line 151, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 62, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_parallax.scss */
 .halloween__moon {
   background: url("/images/halloween/moon.png") no-repeat;
 }
 
-/* line 155, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 66, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_parallax.scss */
 .halloween__witch {
   background: url("/images/halloween/witch.png") no-repeat;
 }
 
-/* line 159, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 70, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_parallax.scss */
 .halloween__cloud {
   background: url("/images/halloween/cloud.png");
   height: 1220px;
@@ -533,7 +606,7 @@ h1, h2, h3, h4, h5 {
   width: 1721px;
 }
 
-/* line 168, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 79, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_parallax.scss */
 .halloween__ghost {
   background: url("/images/halloween/ghost.png") no-repeat;
   height: 449px;
@@ -543,7 +616,7 @@ h1, h2, h3, h4, h5 {
   width: 189px;
 }
 
-/* line 177, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 88, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_parallax.scss */
 .halloween__ghoul {
   background: url("/images/halloween/ghoul.png") no-repeat;
   bottom: 0;
@@ -554,7 +627,7 @@ h1, h2, h3, h4, h5 {
   width: 418px;
 }
 
-/* line 187, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 98, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_parallax.scss */
 .halloween__trees--left {
   background: url("/images/halloween/trees--left.png") no-repeat;
   height: 453px;
@@ -564,7 +637,7 @@ h1, h2, h3, h4, h5 {
   width: 329px;
 }
 
-/* line 196, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 107, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_parallax.scss */
 .halloween__trees--right {
   background: url("/images/halloween/trees--right.png") no-repeat;
   height: 490px;
@@ -574,7 +647,7 @@ h1, h2, h3, h4, h5 {
   width: 401px;
 }
 
-/* line 205, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 116, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_parallax.scss */
 .halloween__bats--back {
   background: url("/images/halloween/bats--back.png") no-repeat;
   height: 86px;
@@ -584,7 +657,7 @@ h1, h2, h3, h4, h5 {
   width: 93px;
 }
 
-/* line 214, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 125, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_parallax.scss */
 .halloween__bats--front {
   background: url("/images/halloween/bats--front.png") no-repeat;
   left: 10%;
@@ -594,7 +667,7 @@ h1, h2, h3, h4, h5 {
   width: 73px;
 }
 
-/* line 223, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 134, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_parallax.scss */
 .halloween__hill--back {
   background: url("/images/halloween/hill_back.png") no-repeat;
   height: 1220px;
@@ -604,7 +677,7 @@ h1, h2, h3, h4, h5 {
   width: 1721px;
 }
 
-/* line 232, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 143, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_parallax.scss */
 .halloween__hill--middle {
   background: url("/images/halloween/hill_middle.png") no-repeat;
   height: 1220px;
@@ -614,7 +687,7 @@ h1, h2, h3, h4, h5 {
   width: 1721px;
 }
 
-/* line 241, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/_halloween.scss */
+/* line 152, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/themes/halloween/components/_parallax.scss */
 .halloween__hill--front {
   background: url("/images/halloween/hill_front.png") no-repeat;
   height: 1220px;

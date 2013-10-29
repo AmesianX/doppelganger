@@ -9,39 +9,57 @@ define([
 		template: template,
 
 		ui: {
-			layers: '.layer'
+			layers   : '.layer',
+			masks    : '.mask',
+			canvases : 'canvas'
 		},
 
 		onDomRefresh: function() {
 			this.$el.width(window.innerWidth + 200);
 			this.$el.height(window.innerHeight);
+			this.$el.parallax();
 		},
 
-		parallax: function() {
-			this.$el.parallax();
+		play: function() {
 			this.videoLoop();
 		},
 
-		deparallax: function() {
-			this.$el.parallax('disable');
+		pause: function() {
+			this.cancel();
+		},
+
+		serializeMask: function(model, maskWidth, maskHeight, zoom) {
+			var attrs = model.toJSON();
+			var video = attrs.videoEl;
+
+			var scaleX = maskWidth / video.videoWidth;
+			var scaleY = maskHeight / video.videoHeight;
+
+			var scale = attrs.scale = Math.max(scaleX, scaleY) * zoom;
+
+			var height = attrs.height = video.videoHeight * scale;
+			var width = attrs.width = video.videoWidth * scale;
+
+			attrs.x = (width - maskWidth) * 0.5;
+			attrs.y = (height - maskHeight) * 0.5;
+
+			return attrs;
 		},
 
 		draw: function() {
-			var masks = this.$('.mask');
-			var canvases = this.$('canvas');
-
 			this.collection.each(function(model, i) {
-				var canvas = canvases.get(i);
-				var mask = masks.get(i);
+				var canvas = this.ui.canvases.get(i);
+				var mask = this.ui.masks.get(i);
 				var ctx = canvas.getContext('2d');
-				var zoom = parseFloat(mask.getAttribute('data-zoom'), 10);
-				var data = model.toJSON(mask.width, mask.height, zoom);
 
-				canvas.width = canvas.width;
+				var zoom = parseFloat(mask.getAttribute('data-zoom'), 10);
+				var data = this.serializeMask(model, mask.width, mask.height, zoom);
+
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 				ctx.save();
 
-				ctx.drawImage(data.videoEl, -data.centerX, -data.centerY, data.width, data.height);
+				ctx.drawImage(data.videoEl, -data.x, -data.y, data.width, data.height);
 				ctx.fillStyle = mask.getAttribute('data-hue');
 				ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -52,8 +70,12 @@ define([
 			}, this);
 		},
 
-		videoLoop: function () {
+		cancel: function() {
 			cancelAnimationFrame(this.frame);
+		},
+
+		videoLoop: function () {
+			this.cancel();
 
 			var last = Date.now();
 

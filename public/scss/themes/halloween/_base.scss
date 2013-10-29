@@ -1,0 +1,17 @@
+body {
+	color: #491d22;
+}
+
+h1, h2, h3, h4, h5 {
+	color: #491d22;
+	font-family: 'League Gothic', sans-serif;
+}
+
+/* Parallax Components */
+
+@import "components/actionbar";
+@import "components/inputs";
+@import "components/masks";
+@import "components/menu";
+@import "components/modal";
+@import "components/parallax";

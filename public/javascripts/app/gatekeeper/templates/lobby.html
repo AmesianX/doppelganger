@@ -1,43 +1,47 @@
-<div class="menu__frontface">
-	<img src="/images/postcard.jpg">
-</div>
+<menu class="menu">
 
-<div class="menu__backface">
-
-	<div class="halloween__menu__header">
-		<h3>Welcome to Haunted Hills</h3>
-		<p>Your destination for the spookiest time of your life. Zombies,
-			Ghosts, creepy birds in the distance — its all here.* Go at it
-			alone, or with friends.</p>
+	<div class="menu__frontface">
+		<img src="/images/postcard.jpg">
 	</div>
 
-	<ol class="halloween__menu__instructions">
-		<li>
-			<img src="/images/stare.png" height="107" width="106">
-			<h3>Stare</h3>
-			<p>at your webcam</p>
-		</li>
-		<li>
-			<img src="/images/share.png" height="107" width="106">
-			<h3>Share</h3>
-			<p>with your friends</p>
-		</li>
-		<li>
-			<img src="/images/scare.png" height="107" width="106">
-			<h3>Scare</h3>
-			<p>the snot out of them</p>
-		</li>
-	</ol>
+	<div class="menu__backface">
 
-	<form class="form--lobby">
-		<div class="field field--horizontal">
-			<label>Session URL:</label>
-			<input name="room_name" type="text" class="input--text" value="http://www.thehauntedhills.com/1728190">
-			<button class="btn" type="submit">Visit Haunted Hills</button>
+		<div class="halloween__menu__header">
+			<h3>Welcome to Haunted Hills</h3>
+			<p>Your destination for the spookiest time of your life. Zombies,
+				Ghosts, creepy birds in the distance — its all here.* Go at it
+				alone, or with friends.</p>
 		</div>
-	</form>
 
-	<small class="menu__legal">
-    	*To get the full Haunted Hills experience, have a webcam and use a browser that supports WebRTC.
-	</small>
-</div>
+		<ol class="halloween__menu__instructions">
+			<li>
+				<img src="/images/stare.png" height="107" width="106">
+				<h3>Stare</h3>
+				<p>at your webcam</p>
+			</li>
+			<li>
+				<img src="/images/share.png" height="107" width="106">
+				<h3>Share</h3>
+				<p>with your friends</p>
+			</li>
+			<li>
+				<img src="/images/scare.png" height="107" width="106">
+				<h3>Scare</h3>
+				<p>the snot out of them</p>
+			</li>
+		</ol>
+
+		<form class="form--lobby">
+			<input type="hidden" name="room_name" value="{{ uuid}}">
+			<div class="field field--horizontal">
+				<label>Session URL:</label>
+				<input disabled type="text" class="input--text" value="http://www.thehauntedhills.com/{{uuid}}">
+				<button class="btn" type="submit">Visit Haunted Hills</button>
+			</div>
+		</form>
+
+		<small class="menu__legal">
+			*To get the full Haunted Hills experience, have a webcam and use a browser that supports WebRTC.
+		</small>
+	</div>
+</menu>

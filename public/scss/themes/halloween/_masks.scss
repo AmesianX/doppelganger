@@ -1,0 +1,28 @@
+/**
+ * @name Masks
+ * @desc Overlays that mask out video faces on the
+ *       parallax scene.
+ */
+
+%halloween__canvas {
+	position: absolute;
+	z-index: 3;
+}
+
+.halloween__canvas--moon {
+	@extend %halloween__canvas;
+	left: 155px;
+	top: 140px;
+}
+
+.halloween__canvas--pumpkin {
+	@extend %halloween__canvas;
+	right: 240px;
+	top: 680px;
+}
+
+.halloween__canvas--ghoul {
+	@extend %halloween__canvas;
+	right: 50px;
+	top: 0px;
+}

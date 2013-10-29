@@ -5,11 +5,11 @@
 
 define([
 	'app/core',
-	'hbars!../templates/lobby'
+	'hbars!../templates/lobby',
+	'app/gatekeeper/lib/uuid'
 ], function(App, template) {
 	return Marionette.ItemView.extend({
-		className : 'menu modal',
-		tagName   : 'menu',
+		className : 'modal',
 		template  : template,
 
 		events    : {
@@ -17,12 +17,19 @@ define([
 		},
 
 		ui: {
+			'menu' : '.menu',
 			'form' : '.form--lobby'
+		},
+
+		serializeData: function() {
+			return {
+				uuid: Math.uuid(8)
+			};
 		},
 
 		onDomRefresh: function() {
 			_.delay(function() {
-				this.$el.addClass('is-flipped');
+				this.ui.menu.addClass('is-flipped');
 			}.bind(this), 1000);
 		},
 

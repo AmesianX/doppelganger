@@ -1,0 +1,33 @@
+/**
+ * @name Halloween Inputs
+ * @desc Overrides for form controls.
+ */
+
+.btn {
+	background: url("/images/btn--back.jpg") 50% 50%;
+	border: 5px solid rgba(#000, 0.1);
+	border-top-color: rgba(#fff, 0.2);
+	border-bottom-color: rgba(#000, 0.3);
+	border-radius: 0;
+	color: #f3f7e1;
+	font-family: 'League Gothic';
+	font-size: 24px;
+	height: 52px;
+	line-height: 42px;
+	text-transform: uppercase;
+}
+
+.field--horizontal label, .input--text {
+	background: rgba(255, 255, 255, 0.54);
+}
+
+.field--horizontal label {
+	color: #491e22;
+	font-family: 'League Gothic';
+	font-size: 24px;
+	text-transform: uppercase;
+}
+
+.input--text {
+	color: #0e3166;
+}

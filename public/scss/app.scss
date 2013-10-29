@@ -9,6 +9,7 @@
 @import "utilities/icons";
 @import "utilities/fonts";
 @import "utilities/hidden";
+@import "utilities/transformations";
 
 @import "effects/fade-away";
 @import "animations/swipe-left";
@@ -19,4 +20,4 @@
 @import "components/honeycomb";
 @import "components/modals";
 
-@import "themes/halloween";
+@import "themes/halloween/base";

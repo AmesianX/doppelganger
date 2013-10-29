@@ -1,0 +1,17 @@
+/**
+ * @name Halloween Actionbar
+ * @desc Overrides for the Halloween scene navigator
+ */
+
+.actionbar__logo {
+	width: 245px;
+}
+
+.actionbar__nav__control.is-active {
+	color: #ccee14;
+	text-shadow: 0 1px 10px darken(#ccee14, 10%);
+
+	&:hover {
+		text-shadow: 0 1px 20px darken(#ccee14, 10%);	
+	}
+}

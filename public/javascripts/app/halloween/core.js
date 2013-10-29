@@ -13,19 +13,17 @@ define([
 	});
 
 	var scene = new Scene({
-		collection: App.Connection.collection
-	})
-
-	Halloween.addInitializer(function() {
-		App.body.show(scene);
+		collection: App.request('connection:streams')
 	});
 
+	App.body.show(scene);
+
 	Halloween.on('start', function() {
-		scene.parallax();
+		scene.play();
 	});
 
 	Halloween.on('stop', function() {
-		scene.deparallax();
+		scene.pause();
 	});
 
 	return Halloween;

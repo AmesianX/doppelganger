@@ -1,0 +1,4 @@
+.accelerated {
+	@include transform-style(preserve-3d);
+	@include transform(translateZ(0));
+}
