@@ -5,14 +5,16 @@
 
 define([
 	'app/core',
+	'./information',
 	'hbars!../templates/utility'
-], function(App, template) {
+], function(App, Info, template) {
 	return Marionette.ItemView.extend({
 		template: template,
 
 		events: {
 			'click .actionbar__nav__control--mute': 'toggleMute',
 			'click .actionbar__nav__control--pause': 'togglePause',
+			'click .actionbar__nav__control--info': 'showInfo',
 			'click .actionbar__logo' : 'visitLobby'
 		},
 
@@ -21,21 +23,33 @@ define([
 			pause: '.actionbar__nav__control--pause'
 		},
 
-		toggleMute: function() {
+		toggleMute: function(e) {
 			var isActive = this.ui.mute.toggleClass('is-active').hasClass('is-active');
 			var action = isActive? 'mute' : 'unmute';
 
 			App.execute('connection:' + action);
+
+			e.preventDefault();
 		},
 
-		togglePause: function() {
+		togglePause: function(e) {
 			var isActive = this.ui.pause.toggleClass('is-active').hasClass('is-active');
 			var action = isActive? 'pause' : 'resume';
+
 			App.execute('connection:' + action);
+
+			e.preventDefault();
+		},
+
+		showInfo: function(e) {
+			App.modal.show(new Info());
+
+			e.preventDefault();
 		},
 
 		visitLobby: function(e) {
 			App.router.navigate('', { trigger: true });
+
 			e.preventDefault();
 		}
 	});

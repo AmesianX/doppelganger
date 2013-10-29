@@ -4,7 +4,11 @@
  */
 
 .actionbar__logo {
-	width: 245px;
+	width: 122px;
+
+	@media screen and (min-width: 768px) {
+		width: 244px;
+	}
 }
 
 .actionbar__nav__control.is-active {
@@ -14,4 +18,9 @@
 	&:hover {
 		text-shadow: 0 1px 20px darken(#ccee14, 10%);	
 	}
+}
+
+.actionbar__nav__control--social:hover {
+	color: #ccee14;
+	text-shadow: 0 1px 20px darken(#ccee14, 10%);	
 }

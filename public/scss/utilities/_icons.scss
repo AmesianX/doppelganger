@@ -9,7 +9,7 @@
 	font-style: normal;
 }
 
-.icon, [class*="icon-"] {
+[class*="icon-"], .icon {
 	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
@@ -34,4 +34,13 @@
 }
 .icon-camera:before {
 	content: "\e603";
+}
+.icon-twitter:before {
+	content: "\e604";
+}
+.icon-facebook:before {
+	content: "\e605";
+}
+.icon-info:before {
+	content: "\e606";
 }

@@ -16,6 +16,10 @@
 	width: 798px;
 
 	@include transition(1s all);
+
+	@media screen and (max-height: 768px) {
+		top: 5%;
+	}
 }
 
 .menu__backface {
@@ -46,4 +50,45 @@
 			border-left: 0;
 		}
 	}
+}
+
+.halloween__menu--info {
+	background: url("/images/halloween/info.jpg") 0 0 no-repeat;
+	color: #d8b47f;
+	padding: 170px 80px 50px 75px
+}
+
+.halloween__menu--info .menu__header {
+	margin-bottom: 4em;
+}
+
+.halloween__menu__credit-list {
+	list-style: none;
+	margin: 2em 0 0;
+	padding: 0;
+	text-align: center;
+
+	li {
+		display: inline-block;
+		margin: 0 0.5em;
+
+		a {
+			display: block;
+			@include transition(0.3s all);
+
+			&:hover {
+				@include transform(scale(1.1, 1.1));
+			}
+		}
+	}
+}
+
+.halloween__menu__pointless {
+	background: url("/images/halloween/logos/pointless.png") 0 0 no-repeat;
+	height: 54px;
+	left: 350px;
+	position: absolute;
+	text-indent: -9999px;
+	top: 159px;	
+	width: 260px;
 }

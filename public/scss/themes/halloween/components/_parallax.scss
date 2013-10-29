@@ -5,8 +5,6 @@
  *       theme.
  */
 
-@import "halloween/spriteable/*.png";
-
 .layer {
 	height: 100%;
 	left: 0;
@@ -23,7 +21,7 @@
 	background: url("/images/halloween/background.jpg") 0 0 repeat-x;
 	left: 0;
 	overflow: hidden;
-	max-height: 100%;
+	max-height: 1120px;
 	max-width: 100%;
 	position: absolute;
 	top: 0;
@@ -57,15 +55,19 @@
   top: -100px;
   height: 479px;
   width: 522px;
+
+	@media screen and (max-width: 768px) {
+		left: 15%;
+	}
 }
 
 .halloween__moon {
 	@include spriteable-sprite('moon', true);
-  }
+}
 
 .halloween__witch {
 	@include spriteable-sprite('witch', true);
-  }
+}
 
 .halloween__cloud {
   background: url("/images/halloween/cloud.png");
@@ -144,4 +146,29 @@
   position: absolute;
   top: 0;
   width: 1721px;
+}
+
+@media screen and (max-height: 768px) {
+
+	.halloween__hill--back {
+		top: -120px;
+	}
+
+	.halloween__hill--middle {
+		top: -230px;
+	}
+
+	.halloween__hill--front {
+		top: -260px;
+	}
+
+	.footer__credits__pointless {
+		margin-top: 0;
+		@include spriteable-sprite('footer--pointless', true);
+	}
+
+	.footer__credits__viget {
+		margin-top: 0;
+		@include spriteable-sprite('footer--viget', true);
+	}
 }

@@ -7,7 +7,7 @@ h1, h2, h3, h4, h5 {
 	font-family: 'League Gothic', sans-serif;
 }
 
-/* Parallax Components */
+@import "halloween/spriteable/*.png";
 
 @import "components/actionbar";
 @import "components/inputs";
@@ -15,3 +15,4 @@ h1, h2, h3, h4, h5 {
 @import "components/menu";
 @import "components/modal";
 @import "components/parallax";
+@import "components/footer";

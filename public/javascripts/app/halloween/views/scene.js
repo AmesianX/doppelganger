@@ -19,8 +19,10 @@ define([
 		},
 
 		resize: _.throttle(function() {
+			var totalHeight = window.innerHeight - $("#region--footer").height();
+
 			this.$el.width(window.innerWidth);
-			this.$el.height(window.innerHeight);
+			this.$el.height(totalHeight);
 		}, 100),
 
 		play: function() {

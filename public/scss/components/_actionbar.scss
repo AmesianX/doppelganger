@@ -10,10 +10,24 @@
 
 .actionbar__logo {
 	background: transparent url("/images/logo--light.png") 0 0 no-repeat;
+	@include background-size(cover);
+	display: block;
+	left: 15px;
+	margin: -15px 0 0 0;
+	position: absolute;
+	top: 50%;
+
 	@include hide-text('left');
-	float: left;
-	height: 60px;
-	width: 182px;
+	height: 30px;
+	width: 91px;
+
+	@include transition(0.4s all);
+
+	@media screen and (min-width: 768px) {
+		height: 60px;
+		margin-top: -30px;
+		width: 182px;
+	}
 }
 
 .actionbar__nav {
@@ -45,4 +59,8 @@
 			text-shadow: 0 1px 5px darken(#3AF, 10%);
 		}
 	}
+}
+
+@media screen and (max-width: 768px) {
+
 }

@@ -23,6 +23,7 @@ define([
 
 		serializeData: function() {
 			return {
+				location: window.location.protocol + '//' + window.location.host,
 				uuid: Math.uuid(8)
 			};
 		},
@@ -30,7 +31,7 @@ define([
 		onDomRefresh: function() {
 			_.delay(function() {
 				this.ui.menu.addClass('is-flipped');
-			}.bind(this), 1000);
+			}.bind(this), 2000);
 		},
 
 		joinRoom: function(e) {
