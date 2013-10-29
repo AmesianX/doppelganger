@@ -41,6 +41,16 @@ define([
 			e.preventDefault();
 		},
 
+		serializeData: function() {
+			return {
+				url: window.location,
+				summary: 'I’m waiting for you in Haunted Hills — join me for a scary-good time.',
+				title: 'Join me in Haunted Hills',
+				image: window.location + '/images/halloween/fb.jpeg',
+				tweet: 'Join me in Haunted Hills — it’s a scary-good time.'
+			};
+		},
+
 		showInfo: function(e) {
 			App.modal.show(new Info());
 
