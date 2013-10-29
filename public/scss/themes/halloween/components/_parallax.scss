@@ -161,14 +161,4 @@
 	.halloween__hill--front {
 		top: -260px;
 	}
-
-	.footer__credits__pointless {
-		margin-top: 0;
-		@include spriteable-sprite('footer--pointless', true);
-	}
-
-	.footer__credits__viget {
-		margin-top: 0;
-		@include spriteable-sprite('footer--viget', true);
-	}
 }

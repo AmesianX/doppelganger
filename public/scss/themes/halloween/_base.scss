@@ -7,12 +7,12 @@ h1, h2, h3, h4, h5 {
 	font-family: 'League Gothic', sans-serif;
 }
 
-@import "halloween/spriteable/*.png";
-
 @import "components/actionbar";
 @import "components/inputs";
 @import "components/masks";
 @import "components/menu";
 @import "components/modal";
+
+@import "halloween/spriteable/*.png";
 @import "components/parallax";
 @import "components/footer";
