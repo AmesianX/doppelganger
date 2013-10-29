@@ -4,42 +4,60 @@
 		<img src="/images/postcard.jpg">
 	</div>
 
-	<div class="menu__backface">
-
-		<div class="halloween__menu__header">
-			<h3>Welcome to Haunted Hills</h3>
-			<p>A fun Halloween experiment using WebRTC Video and Parallax.js. Fire up your webcam, share with your friends, and have a scary-good time.</p>
-		</div>
-
-		<ol class="halloween__menu__instructions">
-			<li>
-				<img src="/images/stare.png" height="107" width="106">
-				<h3>Stare</h3>
-				<p>at your webcam</p>
-			</li>
-			<li>
-				<img src="/images/share.png" height="107" width="106">
-				<h3>Share</h3>
-				<p>with your friends</p>
-			</li>
-			<li>
-				<img src="/images/scare.png" height="107" width="106">
-				<h3>Scare</h3>
-				<p>the snot out of them</p>
-			</li>
-		</ol>
-
-		<form class="form--lobby">
-			<input type="hidden" name="room_name" value="{{ uuid}}">
-			<div class="field field--horizontal">
-				<label>Session URL:</label>
-				<input disabled type="text" class="input--text" value="{{location}}/{{uuid}}">
-				<button class="btn" type="submit">Visit Haunted Hills</button>
+	{{#if hasWebRTC}}
+		<div class="menu__backface">
+			<div class="halloween__menu__header">
+				<h3>Welcome to Haunted Hills</h3>
+				<p>A fun Halloween experiment using WebRTC Video and Parallax.js. Fire up your webcam, share with your friends, and have a scary-good time.</p>
 			</div>
-		</form>
 
-		<small class="menu__legal">
-			*To get the full Haunted Hills experience, have a webcam and use a browser that supports WebRTC.
-		</small>
+			<ol class="halloween__menu__instructions">
+				<li>
+					<img src="/images/stare.png" height="107" width="106">
+					<h3>Stare</h3>
+					<p>at your webcam</p>
+				</li>
+				<li>
+					<img src="/images/share.png" height="107" width="106">
+					<h3>Share</h3>
+					<p>with your friends</p>
+				</li>
+				<li>
+					<img src="/images/scare.png" height="107" width="106">
+					<h3>Scare</h3>
+					<p>the snot out of them</p>
+				</li>
+			</ol>
+
+			<form class="form--lobby">
+				<input type="hidden" name="room_name" value="{{ uuid}}">
+				<div class="field field--horizontal">
+					<label>Session URL:</label>
+					<input disabled type="text" class="input--text" value="{{location}}/{{uuid}}">
+					<button class="btn" type="submit">Visit Haunted Hills</button>
+				</div>
+			</form>
+
+			<small class="menu__legal">
+				*To get the full Haunted Hills experience, have a webcam and use a browser that supports WebRTC.
+			</small>
+		</div>
+	{{ else }}
+    	<div class="menu__backface is-error">
+			<div class="halloween__menu__header">
+				<h2>BOO!*</h2>
+				<p>
+					Your browser isn’t welcome in Haunted
+					Hills.Although it’s still fun to look at — you
+					really should download Chrome or Firefox to
+					get the full
+					experience.
+				</p>
+				<br>
+				<button class="btn js--skip">Take me there anyway</button>
+				<small class="halloween__menu__caveat">* disappointed "Boo" not intimidating scary "Boo"</small>
+			</div>
+		</div>
+	{{/if}}
 	</div>
 </menu>

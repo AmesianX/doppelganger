@@ -1,6 +1,7 @@
 <nav class="actionbar">
 	<a href="/" class="actionbar__logo">Doppelganger</a>
 	<ul class="actionbar__nav">
+		{{#if hasWebRTC}}
 		<li>
 			<a href="#" class="actionbar__nav__control actionbar__nav__control--mute">
 				<i class="icon">&#xe602;</i>
@@ -13,6 +14,7 @@
 				<i class="visually-hidden">Pause Video</i>
 			</a>
 		</li>
+		{{/if}}
 		<li>
 			<a href="#" class="actionbar__nav__control actionbar__nav__control--info actionbar__nav__control--social">
 				<i class="icon">&#xe606;</i>

@@ -23,6 +23,10 @@ define([
 		controller.disconnect();
 	});
 
+	App.reqres.setHandler('connection:supported', function() {
+		return !!navigator.mozGetUserMedia || !!navigator.getUserMedia;
+	});
+
 	App.reqres.setHandler('connection:streams', function() {
 		return controller.collection;
 	});

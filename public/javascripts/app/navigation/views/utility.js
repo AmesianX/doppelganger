@@ -43,6 +43,7 @@ define([
 
 		serializeData: function() {
 			return {
+				hasWebRTC: App.request('connection:supported'),
 				url: window.location,
 				summary: 'I’m waiting for you in Haunted Hills — join me for a scary-good time.',
 				title: 'Join me in Haunted Hills',

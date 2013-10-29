@@ -11,7 +11,7 @@ define(function() {
 
 			App.Connection.stop();
 			App.Halloween.stop();
-			App.Navigation.stop();
+			App.Navigation.start();
 
 			App.Gatekeeper.start();
 		},

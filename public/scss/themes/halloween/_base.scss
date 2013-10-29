@@ -2,9 +2,19 @@ body {
 	color: #491d22;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2 {
+	color: #e9d2b0;
+	font-family: 'League Gothic', sans-serif;
+}
+
+h3, h4, h5 {
 	color: #491d22;
 	font-family: 'League Gothic', sans-serif;
+}
+
+h2 {
+	font-size: 72px;
+	margin-bottom: 15px;
 }
 
 @import "components/actionbar";

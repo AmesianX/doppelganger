@@ -25,11 +25,27 @@
 .menu__backface {
 	background: url("/images/postcard--back.jpg") 0 0 no-repeat;
 	padding: 50px;
+
+	&.is-error {
+		background: url("/images/postcard--error.jpg") 0 0 no-repeat;
+		color: #e9d2b0;
+	}
 }
 
 .halloween__menu__header {
 	margin-bottom: 2em;
 	max-width: 70%;
+
+	.is-error & {
+		max-width: 100%;
+		padding-left: 270px;
+	}
+}
+
+.halloween__menu__caveat {
+	bottom: 2.5em;
+	left: 320px;
+	position: absolute;
 }
 
 .halloween__menu__instructions {

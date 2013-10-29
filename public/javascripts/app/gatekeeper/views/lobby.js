@@ -13,7 +13,8 @@ define([
 		template  : template,
 
 		events    : {
-			'submit form' : 'joinRoom'
+			'submit form' : 'joinRoom',
+			'click .js--skip' : 'close'
 		},
 
 		ui: {
@@ -23,6 +24,7 @@ define([
 
 		serializeData: function() {
 			return {
+				hasWebRTC: App.request('connection:supported'),
 				location: window.location.protocol + '//' + window.location.host,
 				uuid: Math.uuid(8)
 			};
