@@ -17,7 +17,15 @@
 	"dependencies": {
 		"colors": "~0.6.0-1",
 		"express": "3",
-		"express3-handlebars": "~0.4.1"
+		"express3-handlebars": "~0.4.1",
+		"async": "0.1.9",
+		"node-uuid": "1.2.0",
+		"redis": "",
+		"underscore": "",
+		"precommit-hook": "",
+		"getconfig": "",
+		"yetify": "0.0.1",
+		"socket.io": ""
 	},
 	"devDependencies": {
 		"grunt-contrib-requirejs": "~0.4.1",

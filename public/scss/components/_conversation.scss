@@ -1,0 +1,52 @@
+/**
+ * @name Conversation
+ * @desc A chat log that appears in the sidebar.
+ */
+
+.conversation {
+	background: rgba(#000, 0.3);
+	bottom: 55px;
+	color: #fff;
+	font-size: 14px;
+	max-width: 360px;
+	min-width: 280px;
+	position: absolute;
+	right: 0;
+	top: 65px;
+	width: 25%;
+	z-index: 1;
+
+	@include transform-origin(100%, 50%);
+	@include transform(perspective(1000px) translateZ(100px) rotateY(90deg));
+	@include transition(0.4s all);
+	.show-chat & {
+		@include transform(none);
+	}
+}
+
+.conversation__log {
+	line-height: 2;
+	list-style: none;
+	margin: 0;
+	overflow-y: scroll;
+	padding: 2em;
+}
+
+.conversation__log__item {
+	word-break: break-all;
+}
+
+.conversation__form {
+	background: rgba(#000, 0.3);
+	left: 0;
+	position: absolute;
+	bottom: -55px;
+	width: 100%;
+
+	.input--text {
+		background: transparent;
+		color: #fff;
+		font-size: 14px;
+		padding: 1em 1.5em;
+	}
+}

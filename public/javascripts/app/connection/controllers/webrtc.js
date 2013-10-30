@@ -12,22 +12,21 @@ define([
 
 		initialize: function() {
 			var collection = this.collection = new Streams();
+			var log = this.log = new Backbone.Collection();
 
 			this.driver = new SimpleWebRTC({
 				autoRequestMedia: false,
 				autoRemoveVideos: false,
 				localVideoEl: document.createElement('div'),
-				remoteVideosEl: document.createElement('div')
+				remoteVideosEl: document.createElement('div'),
+				url: window.location.protocol + '//' + window.location.host
 			});
 
 			this.driver.on('readyToCall', this.boot.bind(this));
 			this.driver.on('videoAdded', this.addVideo.bind(this));
 			this.driver.on('videoRemoved', this.removeVideo.bind(this));
 
-			this.driver.connection.on('message', function(data) {
-				this.trigger("message", data);
-				this.trigger("message:" + data.type, data);
-			}.bind(this));
+			this.driver.connection.on('message', this.addtoLog.bind(this));
 
 			this.driver.on('speaking', function(data) {
 				data && collection.get(data.id).set('speaking', true);
@@ -64,15 +63,24 @@ define([
 
 		addVideo: function(video, data) {
 			this.collection.add(data);
-			this.trigger("stream:added")
+			this.trigger("stream:added");
 		},
 
 		removeVideo: function(video, data) {
 			this.collection.remove(data.id);
-			this.trigger("stream:removed")
+			this.trigger("stream:removed");
+		},
+
+	 	addtoLog: function(data) {
+			this.log.add(data);
+			this.log.trigger("add:" + data.type, data);
 		},
 
 		send: function(type, data) {
+			this.addtoLog({
+				type: type,
+				payload: data
+			});
 			this.driver.webrtc.sendToAll(type, data);
 		}
 	});

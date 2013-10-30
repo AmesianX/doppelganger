@@ -13,8 +13,9 @@ define(['app/router'], function(Router) {
 
 	Application.addRegions({
 		body       : "#region--body",
+		navigation : "#region--navigation",
 		modal      : "#region--modal",
-		navigation : "#region--navigation"
+		sidebar    : "#region--sidebar"
 	});
 
 	Application.on('start', function() {

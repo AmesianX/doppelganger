@@ -1,0 +1,31 @@
+.menu {
+	padding: 2em 2em 1.5em;
+	@include transform-style(preserve-3d);
+	z-index: 3;
+	
+	&.is-flipped {
+		@include transform(perspective(1000px) rotateY(180deg) translateZ(-5px));
+	}
+}
+
+.menu__header {
+	margin-bottom: 3em;
+	text-align: center;
+}
+
+.menu__frontface, .menu__backface {
+	@include backface-visibility(hidden);
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.menu__frontface {
+	z-index: 2;
+}
+
+.menu__backface {
+	@include transform(rotateY(180deg));
+}

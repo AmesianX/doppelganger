@@ -14,6 +14,7 @@ body {
   background: #091f27;
   font: 18px/1 Helvetica, sans-serif;
   height: 100%;
+  overflow: hidden;
   padding: 0;
   margin: 0;
 }
@@ -139,8 +140,12 @@ label {
   padding: 0 2%;
   width: 100%;
 }
+/* line 31, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/components/_forms.scss */
+.input--text:focus {
+  outline: none;
+}
 
-/* line 32, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/components/_forms.scss */
+/* line 36, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/components/_forms.scss */
 .btn {
   background: #3b4c53;
   border-radius: 4px;
@@ -150,12 +155,12 @@ label {
   line-height: 50px;
 }
 
-/* line 41, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/components/_forms.scss */
+/* line 45, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/components/_forms.scss */
 .btn--full {
   width: 100%;
 }
 
-/* line 45, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/components/_forms.scss */
+/* line 49, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/components/_forms.scss */
 .form__footer {
   margin-top: 2em;
 }
@@ -186,4 +191,70 @@ label {
   top: 25%;
   width: 360px;
   z-index: 3;
+}
+
+/**
+ * @name Conversation
+ * @desc A chat log that appears in the sidebar.
+ */
+/* line 6, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/components/_conversation.scss */
+.conversation {
+  background: rgba(0, 0, 0, 0.3);
+  bottom: 55px;
+  color: #fff;
+  font-size: 14px;
+  max-width: 360px;
+  min-width: 280px;
+  position: absolute;
+  right: 0;
+  top: 65px;
+  width: 25%;
+  z-index: 1;
+  -webkit-transform-origin: 100% 50%;
+  -moz-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  -o-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transform: perspective(1000px) translateZ(100px) rotateY(90deg);
+  -moz-transform: perspective(1000px) translateZ(100px) rotateY(90deg);
+  -ms-transform: perspective(1000px) translateZ(100px) rotateY(90deg);
+  -o-transform: perspective(1000px) translateZ(100px) rotateY(90deg);
+  transform: perspective(1000px) translateZ(100px) rotateY(90deg);
+  -webkit-transition: 0.4s all;
+  -moz-transition: 0.4s all;
+  -o-transition: 0.4s all;
+  transition: 0.4s all;
+}
+/* line 22, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/components/_conversation.scss */
+.show-chat .conversation {
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+
+/* line 27, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/components/_conversation.scss */
+.conversation__log {
+  line-height: 2;
+  list-style: none;
+  margin: 0;
+  overflow-y: scroll;
+  padding: 2em;
+}
+
+/* line 35, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/components/_conversation.scss */
+.conversation__form {
+  background: rgba(0, 0, 0, 0.3);
+  left: 0;
+  position: absolute;
+  bottom: -55px;
+  width: 100%;
+}
+/* line 42, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/components/_conversation.scss */
+.conversation__form .input--text {
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+  padding: 1em 1.5em;
 }

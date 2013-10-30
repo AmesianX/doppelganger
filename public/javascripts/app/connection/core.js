@@ -23,8 +23,16 @@ define([
 		controller.disconnect();
 	});
 
+	App.commands.setHandler('send:chat', function(data) {
+		controller.send('chat', data);
+	});
+
 	App.reqres.setHandler('connection:streams', function() {
 		return controller.collection;
+	});
+
+	App.reqres.setHandler('connection:log', function() {
+		return controller.log;
 	});
 
 	App.commands.setHandler('connection:mute', function() {

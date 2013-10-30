@@ -13,12 +13,19 @@ define([
 		events: {
 			'click .actionbar__nav__control--mute': 'toggleMute',
 			'click .actionbar__nav__control--pause': 'togglePause',
+			'click .actionbar__nav__control--chat': 'toggleChat',
 			'click .actionbar__logo' : 'visitLobby'
 		},
 
 		ui: {
 			mute: '.actionbar__nav__control--mute',
-			pause: '.actionbar__nav__control--pause'
+			pause: '.actionbar__nav__control--pause',
+			chat: '.actionbar__nav__control--chat'
+		},
+
+		toggleChat: function() {
+			var isActive = this.ui.chat.toggleClass('is-active').hasClass('is-active');
+			$("body").toggleClass('show-chat', isActive);
 		},
 
 		toggleMute: function() {
