@@ -32,10 +32,15 @@
 		height: 100%;
 		left: 0;
 		position: absolute;
+		pointer-events: none;
 		top: 0;
 		width: 100%;
 		z-index: 1;
 	}
+}
+
+.halloween__scene .layer {
+	pointer-events: none;
 }
 
 .halloween__scene .layer div {
@@ -130,22 +135,63 @@
   width: 1721px;
 }
 
+.halloween__hill--back__link {
+	left: 847px;
+	pointer-events: auto;
+	position: absolute;
+	top: 407px;
+	height: 70px;
+	width: 53px;
+	@include hide-text('left');
+}
+
 .halloween__hill--middle {
-  background: url("/images/halloween/hill_middle.png") no-repeat;
-  height: 1220px;
-  position: absolute;
-  right: -100px;
-  top: 0;
-  width: 1721px;
+	background: url("/images/halloween/hill_middle.png") no-repeat;
+ 	height: 1220px;
+	position: absolute;
+	right: -100px;
+	top: 0;
+	width: 1721px;
+}
+
+.halloween__hill--middle__link {
+	left: 1166px;
+	pointer-events: auto;
+	position: absolute;
+	top: 486px;
+	height: 228px;
+	width: 165px;
+	z-index: 10;
+	@include hide-text('left');
 }
 
 .halloween__hill--front {
-  background: url("/images/halloween/hill_front.png") no-repeat;
-  height: 1220px;
-  left: -100px;
-  position: absolute;
-  top: 0;
-  width: 1721px;
+	background: url("/images/halloween/hill_front.png") no-repeat;
+	height: 1220px;
+	left: -100px;
+	position: absolute;
+	top: 0;
+	width: 1721px;
+}
+
+.halloween__hill--front__link {
+	height: 180px;
+	left: 297px;
+	pointer-events: auto;
+	position: absolute;
+	width: 133px;
+	top: 620px;
+	@include hide-text('left');
+}
+
+.halloween__hill--pointless__link {
+	left: 222px;
+	height: 130px;
+	pointer-events: auto;
+	position: absolute;
+	top: 874px;
+	width: 103px;
+	@include hide-text('left');
 }
 
 @media screen and (max-height: 768px) {

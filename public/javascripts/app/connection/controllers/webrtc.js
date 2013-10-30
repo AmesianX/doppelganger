@@ -18,7 +18,8 @@ define([
 				autoRequestMedia: false,
 				autoRemoveVideos: false,
 				localVideoEl: document.createElement('div'),
-				remoteVideosEl: document.createElement('div')
+				remoteVideosEl: document.createElement('div'),
+				url: window.location.protocol + '//' + window.location.host
 			});
 
 			this.driver.on('readyToCall', this.boot.bind(this));

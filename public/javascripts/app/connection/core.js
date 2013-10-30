@@ -24,7 +24,7 @@ define([
 	});
 
 	App.reqres.setHandler('connection:supported', function() {
-		return !!navigator.mozGetUserMedia || !!navigator.getUserMedia;
+		return !!window.webkitRTCPeerConnection || !!window.mozRTCPeerConnection || !!window.RTCPeerConnection;
 	});
 
 	App.reqres.setHandler('connection:streams', function() {
