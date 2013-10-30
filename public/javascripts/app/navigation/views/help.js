@@ -1,9 +1,9 @@
 /**
- * @name Visitor
+ * @name Information
  * @desc Displays build information for the app
  */
 
-define(['hbars!../templates/visitor'], function(template) {
+define(['hbars!../templates/help'], function(template) {
 	return Marionette.ItemView.extend({
 		className: 'modal',
 
@@ -11,17 +11,11 @@ define(['hbars!../templates/visitor'], function(template) {
 
 		events: {
 			'click': 'handleModalClick',
-			'click .menu__close': 'remove',
-			'click .btn': 'remove'
+			'click .menu__close': 'remove'
 		},
 
 		ui: {
 			'menu' : '.menu'
-		},
-
-		remove: function() {
-			this.ui.menu.addClass('effect__fade-away');
-			setTimeout(Marionette.ItemView.prototype.remove.bind(this), 700);
 		},
 
 		handleModalClick: function(e) {

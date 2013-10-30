@@ -3,7 +3,7 @@
  * @desc The brain of the application
  */
 
-define(['app/router'], function(Router) {
+define(['app/router', 'app/helpers'], function(Router) {
 
 	var Application = new Marionette.Application();
 

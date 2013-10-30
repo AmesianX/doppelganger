@@ -1,0 +1,75 @@
+<menu class="menu">
+
+	<div class="menu__frontface">
+		<img src="/images/postcard.jpg">
+	</div>
+
+	{{#if hasWebRTC}}
+		<div class="menu__backface">
+
+	    	<span class="menu__close">&times;</span>
+
+			<div class="halloween__menu__header">
+				<h3>Welcome to Haunted Hills</h3>
+				<p>
+					A fun Halloween experiment using
+					{{link_to_webrtc}} Video and {{link_to_parallax}}
+					Fire up your webcam, share with your friends, and
+					have a scary-good time.
+				</p>
+			</div>
+
+			<ol class="halloween__menu__instructions">
+				<li>
+					<img src="/images/stare.png" height="107" width="106">
+					<h3>Stare</h3>
+					<p>at your webcam</p>
+				</li>
+				<li>
+					<img src="/images/share.png" height="107" width="106">
+					<h3>Share</h3>
+					<p>with your friends</p>
+				</li>
+				<li>
+					<img src="/images/scare.png" height="107" width="106">
+					<h3>Scare</h3>
+					<p>the snot out of them</p>
+				</li>
+			</ol>
+
+			<div class="field field--horizontal">
+				<label>Session URL:</label>
+				<input type="text" class="input--text" value="{{location}}">
+				<a class="btn btn--social" target="_blank" href="{{share_facebook_url}}">
+					<i class="icon">&#xe605;</i>
+				</a>
+ 				<a class="btn btn--social" target="_blank" href="{{share_twitter_url}}">
+					<i class="icon">&#xe604;</i>
+				</a>
+			</div>
+
+			<small class="menu__legal">
+				* We've detected that you are using Chrome, Firefox,
+			or another WebRTC capable browser. Thanks for making the
+			internet a happier place.
+			</small>
+		</div>
+	{{ else }}
+    	<div class="menu__backface is-error">
+			<div class="halloween__menu__header">
+				<h2>BOO!*</h2>
+				<p>
+					Your browser isn’t welcome in Haunted
+					Hills. Although it’s still fun to look at — you
+					really should download
+					{{link_to_chrome}} or {{link_to_firefox}}
+					to get the full experience.
+				</p>
+				<br>
+				<button class="btn js--skip">Take me there anyway</button>
+				<small class="halloween__menu__caveat">* disappointed "Boo" not intimidating scary "Boo"</small>
+			</div>
+		</div>
+	{{/if}}
+	</div>
+</menu>

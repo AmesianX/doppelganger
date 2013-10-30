@@ -18,11 +18,6 @@ define(['hbars!../templates/information'], function(template) {
 			'menu' : '.menu'
 		},
 
-		remove: function() {
-			this.ui.menu.addClass('effect__fade-away');
-			setTimeout(Marionette.ItemView.prototype.remove.bind(this), 700);
-		},
-
 		handleModalClick: function(e) {
 			if (e.target == this.el) this.remove();
 		}

@@ -30,3 +30,14 @@
 		text-shadow: 0 1px 20px darken(#ccee14, 10%);	
 	}
 }
+
+.actionbar__nav__control--info, 
+.actionbar__nav__control--share, 
+.actionbar__nav__control--help{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	position: relative;
+	text-transform: uppercase;
+	top: -3px;
+}

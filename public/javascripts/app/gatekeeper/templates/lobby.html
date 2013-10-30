@@ -1,75 +1,42 @@
-<menu class="menu">
+{{#if hasWebRTC}}
+<menu class="menu halloween__menu--info">
 
-	<div class="menu__frontface">
-		<img src="/images/postcard.jpg">
-	</div>
+	<header class="menu__header">
+		<a class="halloween__menu__pointless" href="http://pointlesscorp.com">Pointless Corp</a>
+	</header>
 
-	{{#if hasWebRTC}}
-		<div class="menu__backface">
-			<div class="halloween__menu__header">
-				<h3>Welcome to Haunted Hills</h3>
-				<p>
-					A fun Halloween experiment using <a
-    					href="http://www.webrtc.org/"
-						target="_blank">WebRTC</a> Video and
-					<a href="http://wagerfield.github.io/parallax/"
-						target="_blank">Parallax.JS</a>.
-					Fire up your webcam, share with your friends, and
-					have a scary-good time.
-				</p>
-			</div>
+	<p class="menu__content">
+    	Welcome to Haunted Hills! A fun Halloween experiment using
+		{{link_to_webrtc}} Video and {{link_to_parallax}}
+		To get the full experience, use your webcam and the latest versions of
+		{{link_to_chrome}} or {{link_to_firefox}}.
+		Go at it alone, or with friends.
+	</p>
 
-			<ol class="halloween__menu__instructions">
-				<li>
-					<img src="/images/stare.png" height="107" width="106">
-					<h3>Stare</h3>
-					<p>at your webcam</p>
-				</li>
-				<li>
-					<img src="/images/share.png" height="107" width="106">
-					<h3>Share</h3>
-					<p>with your friends</p>
-				</li>
-				<li>
-					<img src="/images/scare.png" height="107" width="106">
-					<h3>Scare</h3>
-					<p>the snot out of them</p>
-				</li>
-			</ol>
-
-			<form class="form--lobby">
-				<input type="hidden" name="room_name" value="{{ uuid}}">
-				<div class="field field--horizontal">
-					<label>Session URL:</label>
-					<input disabled type="text" class="input--text" value="{{location}}/{{uuid}}">
-					<button class="btn" type="submit">Visit Haunted Hills</button>
-				</div>
-			</form>
-
-			<small class="menu__legal">
-				* We've detected that you are using Chrome, Firefox,
-			or another WebRTC capable browser. Thanks for making the
-			internet a happier place.
-			</small>
+	<form class="form--lobby menu__content">
+		<input type="hidden" name="room_name" value="{{uuid}}">
+			<button class="btn" type="submit">Visit Haunted Hills</button>
 		</div>
-	{{ else }}
-    	<div class="menu__backface is-error">
-			<div class="halloween__menu__header">
-				<h2>BOO!*</h2>
-				<p>
-					Your browser isn’t welcome in Haunted
-					Hills. Although it’s still fun to look at — you
-					really should download
-					<a href="https://www.google.com/intl/en/chrome/browser/" target="_blank">Chrome</a>
-					or
-					<a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>
-					to get the full experience.
-				</p>
-				<br>
-				<button class="btn js--skip">Take me there anyway</button>
-				<small class="halloween__menu__caveat">* disappointed "Boo" not intimidating scary "Boo"</small>
-			</div>
-		</div>
-	{{/if}}
-	</div>
+	</form>
+
 </menu>
+
+{{else}}
+<div class="menu is-error">
+	<span class="menu__close">&times;</span>
+    <div class="halloween__menu__header">
+        <h2>BOO!*</h2>
+        <p>
+            Your browser isn’t welcome in Haunted Hills. Although it’s still fun to look at — you
+            really should download
+            <a href="https://www.google.com/intl/en/chrome/browser/" target="_blank">Chrome</a>
+            or
+            <a href="http://www.mozilla.org/en-US/firefox/new/" target="_blank">Firefox</a>
+            to get the full experience.
+        </p>
+        <br>
+        <button class="btn js--skip">Take me there anyway</button>
+        <small class="halloween__menu__caveat">* disappointed "Boo" not intimidating scary "Boo"</small>
+    </div>
+</div>
+{{/if}}

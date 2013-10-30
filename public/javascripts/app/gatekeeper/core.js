@@ -5,7 +5,8 @@
 
 define([
 	'app/core',
-	'./views/Lobby'
+	'./views/Lobby',
+	'./helpers'
 ], function(App, Lobby) {
 
 	var Gatekeeper = App.module("Gatekeeper", function() {

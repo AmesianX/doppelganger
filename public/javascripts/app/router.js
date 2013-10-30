@@ -11,7 +11,8 @@ define(function() {
 
 			App.Connection.stop();
 			App.Halloween.stop();
-			App.Navigation.start();
+			App.Greeter.stop();
+			App.Navigation.stop();
 
 			App.Gatekeeper.start();
 		},
@@ -24,6 +25,7 @@ define(function() {
 			App.Connection.start();
 			App.Halloween.start();
 			App.Navigation.start();
+			App.Greeter.start();
 		}
 	});
 });

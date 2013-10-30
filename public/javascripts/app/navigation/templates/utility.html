@@ -1,5 +1,6 @@
 <nav class="actionbar">
 	<a href="/" class="actionbar__logo">Doppelganger</a>
+
 	<ul class="actionbar__nav">
 		{{#if hasWebRTC}}
 		<li>
@@ -17,20 +18,17 @@
 		{{/if}}
 		<li>
 			<a href="#" class="actionbar__nav__control actionbar__nav__control--info actionbar__nav__control--social">
-				<i class="icon">&#xe606;</i>
-				<i class="visually-hidden">Info</i>
+				About
 			</a>
 		</li>
 		<li>
-			<a href="http://twitter.com/home?status={{tweet}}+{{url}}" target="_blank" class="actionbar__nav__control actionbar__nav__control--social" data-title="Twitter">
-				<i class="icon">&#xe604;</i>
-				<i class="visually-hidden">Share on Twitter</i>
+			<a href="#" class="actionbar__nav__control actionbar__nav__control--share actionbar__nav__control--social">
+				Share
 			</a>
 		</li>
 		<li>
-			<a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]={{url}}&p[title]={{title}}&p[summary]={{summary}}&p[images][0]={{image}}" target="_blank" class="actionbar__nav__control actionbar__nav__control--social" data-title="Facebook">
-				<i class="icon">&#xe605;</i>
-				<i class="visually-hidden">Share on Facebook</i>
+			<a href="#" class="actionbar__nav__control actionbar__nav__control--help actionbar__nav__control--social">
+				Help
 			</a>
 		</li>
 	</ul>

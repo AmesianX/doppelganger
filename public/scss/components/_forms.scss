@@ -28,6 +28,7 @@ label {
 	cursor: pointer;
 	font-size: 16px;
 	line-height: 50px;
+	text-align: center;
 }
 
 .btn--full {
@@ -52,11 +53,25 @@ label {
 	.input--text {
 		float: left;
 		padding: 0;
-		width: 52%;
+		width: 65%;
 	}
  
 	.btn {
 		float: right;
 		width: 30%;
+	}
+
+	.btn--social {
+		margin-left: 0.5em;
+		padding: 0 0.4em;
+		text-align: center;
+		width: auto;
+		text-shadow: 0 1px 2px rgba(#000, 0.2);
+
+		&:hover,
+		&:focus {
+			color: #fff;
+			text-shadow: 0 0 4px rgba(#fff, 0.4);
+		}
 	}
 }

@@ -5,9 +5,11 @@
 
 define([
 	'app/core',
+	'app/greeter/views/share',
 	'./information',
+	'./help',
 	'hbars!../templates/utility'
-], function(App, Info, template) {
+], function(App, Share, Info, Help, template) {
 	return Marionette.ItemView.extend({
 		template: template,
 
@@ -15,6 +17,8 @@ define([
 			'click .actionbar__nav__control--mute': 'toggleMute',
 			'click .actionbar__nav__control--pause': 'togglePause',
 			'click .actionbar__nav__control--info': 'showInfo',
+			'click .actionbar__nav__control--share': 'showShare',
+			'click .actionbar__nav__control--help': 'showHelp',
 			'click .actionbar__logo' : 'visitLobby'
 		},
 
@@ -44,23 +48,27 @@ define([
 		serializeData: function() {
 			return {
 				hasWebRTC: App.request('connection:supported'),
-				url: window.location,
-				summary: 'I’m waiting for you in Haunted Hills — join me for a scary-good time.',
-				title: 'Join me in Haunted Hills',
-				image: window.location + '/images/halloween/fb.jpeg',
-				tweet: 'Join me in Haunted Hills — it’s a scary-good time.'
+				url: window.location
 			};
 		},
 
 		showInfo: function(e) {
 			App.modal.show(new Info());
+			e.preventDefault();
+		},
 
+		showHelp: function(e) {
+			App.modal.show(new Help());
+			e.preventDefault();
+		},
+
+		showShare: function(e) {
+			App.modal.show(new Share());
 			e.preventDefault();
 		},
 
 		visitLobby: function(e) {
 			App.router.navigate('', { trigger: true });
-
 			e.preventDefault();
 		}
 	});
