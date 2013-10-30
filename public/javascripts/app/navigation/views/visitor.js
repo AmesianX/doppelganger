@@ -11,6 +11,7 @@ define(['hbars!../templates/visitor'], function(template) {
 
 		events: {
 			'click': 'handleModalClick',
+			'click .menu__close': 'remove',
 			'click .btn': 'remove'
 		},
 

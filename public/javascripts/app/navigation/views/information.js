@@ -10,7 +10,8 @@ define(['hbars!../templates/information'], function(template) {
 		template: template,
 
 		events: {
-			'click': 'handleModalClick'
+			'click': 'handleModalClick',
+			'click .menu__close': 'remove'
 		},
 
 		ui: {
