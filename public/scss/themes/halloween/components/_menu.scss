@@ -29,6 +29,15 @@
 	&.is-error {
 		background: url("/images/postcard--error.jpg") 0 0 no-repeat;
 		color: #e9d2b0;
+
+		a {
+			color: #e9d2b0;
+
+			&:hover,
+			&:focus {
+				color: lighten(#e9d2b0, 10%);
+			}
+		}
 	}
 }
 
@@ -49,7 +58,7 @@
 }
 
 .halloween__menu__instructions {
-	margin: 0 0 3em;
+	margin: 0 0 2em;
 	padding: 0;
 	text-align: center;
 

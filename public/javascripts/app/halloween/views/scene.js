@@ -87,7 +87,7 @@ define([
 			this.frame = requestAnimationFrame(function play() {
 				var isStale = Date.now() - last > (1000/30);
 
-				this.frame = requestAnimationFrame(play.bind(this))
+				this.frame = requestAnimationFrame(play.bind(this));
 
 				if (isStale) {
 					last = Date.now();
