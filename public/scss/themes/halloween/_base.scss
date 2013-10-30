@@ -17,6 +17,17 @@ h2 {
 	margin-bottom: 15px;
 }
 
+a {	
+	color: #491d22;
+	font-weight: bold;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		color: lighten(#491d22, 10%);
+	}
+}
+
 @import "components/actionbar";
 @import "components/inputs";
 @import "components/masks";

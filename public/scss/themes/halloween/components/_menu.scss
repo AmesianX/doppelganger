@@ -71,7 +71,16 @@
 .halloween__menu--info {
 	background: url("/images/halloween/info.jpg") 0 0 no-repeat;
 	color: #d8b47f;
-	padding: 170px 80px 50px 75px
+	padding: 170px 80px 50px 75px;
+
+	a {
+		color: #d8b47f;
+
+		&:hover,
+		&:focus {
+			color: lighten(#d8b47f, 10%);
+		}
+	}
 }
 
 .halloween__menu--info .menu__header {
