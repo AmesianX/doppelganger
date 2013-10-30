@@ -40,7 +40,11 @@ module.exports = function(grunt) {
 					baseUrl: "public/javascripts",
 					mainConfigFile: "public/javascripts/config.js",
 					name: 'vendor/almond',
-					deps: ['setup'],
+					deps: [
+						'setup',
+						'app/connection/controllers/webrtc',
+						'app/connection/controllers/fallback'
+					],
 					optimize: 'uglify2',
 					preserveLicenseComments: false,
 					insertRequire: ['setup'],

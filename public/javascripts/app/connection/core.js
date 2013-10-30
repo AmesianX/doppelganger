@@ -5,8 +5,9 @@
 
 define([
 	'app/core',
-	(!!window.webkitRTCPeerConnection || !!window.mozRTCPeerConnection || !!window.RTCPeerConnection? './controllers/webrtc' : './controllers/fallback')
+	((!!window.webkitRTCPeerConnection || !!window.mozRTCPeerConnection || !!window.RTCPeerConnection)? 'app/connection/controllers/webrtc' : 'app/connection/controllers/fallback')
 ], function(App, Controller) {
+	var hasWebRTC = (!!window.webkitRTCPeerConnection || !!window.mozRTCPeerConnection || !!window.RTCPeerConnection);
 
 	var Connection = App.module("Connection", function() {
 		this.startWithParent = false;
