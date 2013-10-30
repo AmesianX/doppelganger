@@ -5,10 +5,15 @@
 
 define([
 	'app/core',
+	'./views/visitor',
 	'./views/utility'
-], function(App, Utility) {
+], function(App, Visitor, Utility) {
 	var Navigation = App.module("Navigation", function() {
 		this.startWithParent = false;
+
+		if (App.request("connection:supported") && window.location.pathname.length > 2) {
+			App.modal.show(new Visitor());
+		}
 	});
 
 	Navigation.on('start', function() {

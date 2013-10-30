@@ -15,12 +15,18 @@
 	color: #ccee14;
 	text-shadow: 0 1px 10px darken(#ccee14, 10%);
 
-	&:hover {
+	&:hover,
+	&:focus {
 		text-shadow: 0 1px 20px darken(#ccee14, 10%);	
 	}
 }
 
-.actionbar__nav__control--social:hover {
-	color: #ccee14;
-	text-shadow: 0 1px 20px darken(#ccee14, 10%);	
+.actionbar__nav__control--social {
+	color: darken(#ccee14, 10%);
+
+	&:hover,
+	&:focus {
+		color: #ccee14;
+		text-shadow: 0 1px 20px darken(#ccee14, 10%);	
+	}
 }
