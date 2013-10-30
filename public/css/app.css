@@ -244,6 +244,11 @@ label {
 }
 
 /* line 35, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/components/_conversation.scss */
+.conversation__log__item {
+  word-break: break-all;
+}
+
+/* line 39, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/components/_conversation.scss */
 .conversation__form {
   background: rgba(0, 0, 0, 0.3);
   left: 0;
@@ -251,7 +256,7 @@ label {
   bottom: -55px;
   width: 100%;
 }
-/* line 42, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/components/_conversation.scss */
+/* line 46, /Users/nathanielhunzaker/Sites/doppleganger/public/scss/components/_conversation.scss */
 .conversation__form .input--text {
   background: transparent;
   color: #fff;
