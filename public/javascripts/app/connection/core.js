@@ -5,12 +5,12 @@
 
 define([
 	'app/core',
-	'./controllers/webrtc'
+	(!!window.webkitRTCPeerConnection || !!window.mozRTCPeerConnection || !!window.RTCPeerConnection? './controllers/webrtc' : './controllers/fallback')
 ], function(App, Controller) {
 
 	var Connection = App.module("Connection", function() {
-		this.controller = new Controller();
 		this.startWithParent = false;
+		this.controller = new Controller();
 	});
 
 	var controller = Connection.controller;
@@ -20,7 +20,7 @@ define([
 	});
 
 	Connection.on('stop', function() {
-		controller.disconnect();
+		_.result(controller, 'disconnect');
 	});
 
 	App.reqres.setHandler('connection:supported', function() {
@@ -32,19 +32,19 @@ define([
 	});
 
 	App.commands.setHandler('connection:mute', function() {
-		controller.driver.mute();
+		controller.mute();
 	});
 
 	App.commands.setHandler('connection:unmute', function() {
-		controller.driver.unmute();
+		controller.unmute();
 	});
 
 	App.commands.setHandler('connection:pause', function() {
-		controller.driver.pause();
+		controller.pause();
 	});
 
 	App.commands.setHandler('connection:resume', function() {
-		controller.driver.resume();
+		controller.resume();
 	});
 
 	return Connection;

@@ -1,9 +1,10 @@
 .menu {
 	padding: 2em 2em 1.5em;
 	@include transform-style(preserve-3d);
-
+	z-index: 3;
+	
 	&.is-flipped {
-		@include transform(perspective(1000px) rotateY(180deg));
+		@include transform(perspective(1000px) rotateY(180deg) translateZ(-5px));
 	}
 }
 

@@ -4,9 +4,10 @@
  */
 
 define([
+	'app/core',
 	'vendor/simplewebrtc',
 	'app/connection/collections/streams'
-], function(SimpleWebRTC, Streams) {
+], function(App, SimpleWebRTC, Streams) {
 
 	return Marionette.Controller.extend({
 
@@ -36,15 +37,23 @@ define([
 			this.driver.on('stoppedSpeaking', function(data) {
 				data && collection.get(data.id).set('speaking', false);
 			});
+
+			_(['mute', 'unmute', 'pause', 'resume']).each(function(action) {
+				this[action] = function() {
+					_.result(this.driver, action);
+				};
+			}, this);
+
 		},
 
 		connect: function() {
-			this.driver.startLocalVideo();
+			_.result(this.driver, 'startLocalVideo');
 		},
 
 		disconnect: function() {
-			this.driver.leaveRoom();
-			this.driver.stopLocalVideo();
+			_.result(this.driver, 'leaveRoom');
+			_.result(this.driver, 'stopLocalVideo');
+
 			this.collection.reset();
 		},
 
@@ -58,7 +67,9 @@ define([
 				local: true,
 				videoEl: this.localVideo()
  			});
-			this.driver.resume();
+
+			this.resume();
+
 			this.driver.joinRoom(window.location.pathname.slice(1));
 		},
 
