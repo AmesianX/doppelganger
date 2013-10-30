@@ -10,6 +10,10 @@ define([
 
 	var Gatekeeper = App.module("Gatekeeper", function() {
 		this.startWithParent = false;
+
+		if (!App.request('connection:supported')) {
+			App.modal.show(new Lobby());
+		}
 	});
 
 	Gatekeeper.on('start', function() {
