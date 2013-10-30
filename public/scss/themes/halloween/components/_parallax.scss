@@ -37,6 +37,12 @@
 		width: 100%;
 		z-index: 1;
 	}
+
+	@media screen and (min-width: 1600px) {
+		left: 50%;
+		margin-left: -800px;
+		max-width: 1600px;		
+	}
 }
 
 .halloween__scene .layer {
@@ -172,6 +178,15 @@
 	position: absolute;
 	top: 0;
 	width: 1721px;
+}
+
+.halloween__hill--front__repeat {
+	background: url("/images/halloween/hill_front_repeat.jpeg");
+	height: 192px;
+	left: 1603px;
+	position: absolute;
+	top: 1030px;
+	width: 1000px;
 }
 
 .halloween__hill--front__link {

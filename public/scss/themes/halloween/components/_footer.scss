@@ -11,6 +11,11 @@
 	padding: 0 1.5em;
 	position: absolute;
 	width: 100%;
+
+	@media screen and (min-height: 1120px) {
+		bottom: auto;
+		top: 1140px;
+	}
 }
 
 .footer__content {
