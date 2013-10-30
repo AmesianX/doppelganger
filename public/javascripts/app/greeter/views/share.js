@@ -24,7 +24,7 @@ define([
 		onDomRefresh: function() {
 			setTimeout(function(){
 				this.ui.menu.addClass('is-flipped');
-			}.bind(this), 500);
+			}.bind(this), 900);
 		},
 
 		serializeData: function() {
