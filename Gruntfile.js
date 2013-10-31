@@ -72,11 +72,27 @@ module.exports = function(grunt) {
 				tasks: ['requirejs']
 			},
 			styles: {
-				files: ['public/**/*.scss'],
+				files: [
+					'public/**/*.scss',
+					'!public/**/.*'
+				],
 				tasks: ['compass']
 			}
 		},
 
+		imagemin: {
+			dynamic: {
+				options: {
+					pngquant: true
+				},
+				files: [{
+					expand: true,
+					cwd: 'public/images',
+					src: ['**/*.{png,jpg,gif}'],
+					dest: 'public/images'
+				}]
+			}
+		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
@@ -84,7 +100,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks("grunt-jquery-builder");
 	grunt.loadNpmTasks('grunt-lodash');
+	grunt.loadNpmTasks('grunt-contrib-imagemin');
 
 	grunt.registerTask('build', ['compass', 'jquery', 'lodash', 'requirejs']);
-	grunt.registerTask('default', ['build']);
+	grunt.registerTask('optimize', ['imagemin']);
+	grunt.registerTask('default', ['build', 'optimize']);
 };

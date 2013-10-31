@@ -28,6 +28,10 @@
 .menu__backface {
 	background: #cbb796 url("/images/postcard--back.jpg") 0 0 no-repeat;
 	padding: 50px;
+
+	h3 {
+		margin-bottom: 0.5em;
+	}
 }
 
 .menu.is-error {

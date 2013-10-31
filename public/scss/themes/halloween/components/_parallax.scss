@@ -94,6 +94,12 @@
   position: absolute;
   @include spriteable-sprite('ghost', true);
   top: 30px;
+
+  @include transition(0.3s all);
+
+  @media screen and (max-height: 768px) {
+	left: 20%;
+  }
 }
 
 .halloween__ghoul {
@@ -215,7 +221,7 @@
 		top: -120px;
 	}
 
-	.halloween__hill--middle {
+	.halloween__hill--middle, .halloween__ {
 		top: -230px;
 	}
 

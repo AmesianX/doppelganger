@@ -37,6 +37,10 @@
 	left: 297px;
 	top: 620px;
 	-webkit-filter: grayscale(1);
+
+	@media screen and (max-height: 768px) {
+		top: 360px;
+	}
 }
 
 .halloween__canvas--grave-middle {
@@ -44,4 +48,8 @@
 	right: 110px;
 	top: 495px;
 	-webkit-filter: grayscale(1);
+
+	@media screen and (max-height: 768px) {
+		top: 265px;
+	}
 }
