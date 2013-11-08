@@ -21,7 +21,8 @@ define([
 		},
 
 		ui: {
-			form: '.conversation__form'
+			form: '.conversation__form',
+			message: '.conversation__form [name=message]'
 		},
 
 		serializeData: function() {
@@ -31,21 +32,20 @@ define([
 			});
 
 			return {
+				username: 'Anonymous',
 				items: _.sortBy(items, 'timestamp')
 			};
 		},
 
 		sendMessage: function() {
-			var message = this.ui.form[0]['message'];
 
 			App.execute('send:chat', {
+				username: '☺',
 				timestamp: Date.now(),
-				message: message.value
+				message: this.ui.message.val()
 			});
 
- 			message.value = '';
-
-			$(message).focus();
+ 			this.ui.message.val('').focus();
 
 			return false;
 		}
