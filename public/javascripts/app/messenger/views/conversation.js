@@ -32,7 +32,7 @@ define([
 			});
 
 			return {
-				username: 'Anonymous',
+				user: localStorage.getItem('user_name'),
 				items: _.sortBy(items, 'timestamp')
 			};
 		},
@@ -40,7 +40,7 @@ define([
 		sendMessage: function() {
 
 			App.execute('send:chat', {
-				username: '☺',
+				user: localStorage.getItem('user_name'),
 				timestamp: Date.now(),
 				message: this.ui.message.val()
 			});

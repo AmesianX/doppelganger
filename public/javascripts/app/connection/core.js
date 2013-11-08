@@ -5,7 +5,8 @@
 
 define([
 	'app/core',
-	'./controllers/webrtc'
+	'./controllers/webrtc',
+	'./tools'
 ], function(App, Controller) {
 
 	var Connection = App.module("Connection", function() {
@@ -29,6 +30,10 @@ define([
 
 	App.reqres.setHandler('connection:streams', function() {
 		return controller.collection;
+	});
+
+	App.reqres.setHandler('connection:local', function() {
+		return controller.collection.findWhere({ local: true });
 	});
 
 	App.reqres.setHandler('connection:log', function() {

@@ -17,12 +17,14 @@ define([
 		},
 
 		ui: {
-			'form' : '.form--lobby'
+			'form' : '.form--lobby',
+			'room' : '.form--lobby [name=room_name]',
+			'user' : '.form--lobby [name=user_name]'
 		},
 
 		joinRoom: function(e) {
-			var room = this.ui.form[0]['room_name'].value;
-			App.router.navigate(room, { trigger: true });
+			localStorage.setItem('user_name', this.ui.user.val());
+			App.router.navigate(this.ui.room.val(), { trigger: true });
 			e.preventDefault();
 		},
 

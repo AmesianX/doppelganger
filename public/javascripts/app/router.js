@@ -11,6 +11,7 @@ define(function() {
 
 			App.Connection.stop();
 			App.Navigation.stop();
+			App.Messenger.stop();
 
 			App.Gatekeeper.start();
 		},
@@ -20,6 +21,7 @@ define(function() {
 
 			App.Gatekeeper.stop();
 
+			App.Messenger.start();
 			App.Navigation.start();
 			App.Connection.start();
 		}

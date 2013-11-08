@@ -5,8 +5,11 @@ module.exports = function(grunt) {
 		compass: {
 			dist: {
 				options: {
-					sassDir: 'public/scss',
-					cssDir: 'public/css'
+					basePath: 'public',
+					imagesDir: 'images',
+					sassDir: 'scss',
+					cssDir: 'css',
+					outputStyle: 'compressed'
 				}
  			}
 		},
@@ -14,11 +17,11 @@ module.exports = function(grunt) {
 		jquery: {
 			dist: {
 				options: {
-					prefix: "jquery-",
+					prefix: "jquery-"
 				},
 				output: "public/javascripts/vendor",
 				versions: {
-					"2.0.3": ["ajax", "wrap", "deprecated", "sizzle", "offset", "effects"]
+					"2.0.3": ["ajax", "wrap", "deprecated", "sizzle", "effects"]
  				}
 	  		}
 		},
@@ -37,7 +40,11 @@ module.exports = function(grunt) {
 					baseUrl: "public/javascripts",
 					mainConfigFile: "public/javascripts/config.js",
 					name: 'vendor/almond',
-					deps: ['setup'],
+					deps: [
+						'setup',
+						'app/connection/controllers/webrtc',
+						'app/connection/controllers/fallback'
+					],
 					optimize: 'uglify2',
 					preserveLicenseComments: false,
 					insertRequire: ['setup'],
@@ -65,11 +72,27 @@ module.exports = function(grunt) {
 				tasks: ['requirejs']
 			},
 			styles: {
-				files: ['public/**/*.scss'],
+				files: [
+					'public/**/*.scss',
+					'!public/**/.*'
+				],
 				tasks: ['compass']
 			}
 		},
 
+		imagemin: {
+			dynamic: {
+				options: {
+					pngquant: true
+				},
+				files: [{
+					expand: true,
+					cwd: 'public/images',
+					src: ['**/*.{png,jpg,gif}'],
+					dest: 'public/images'
+				}]
+			}
+		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
@@ -77,7 +100,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks("grunt-jquery-builder");
 	grunt.loadNpmTasks('grunt-lodash');
+	grunt.loadNpmTasks('grunt-contrib-imagemin');
 
 	grunt.registerTask('build', ['compass', 'jquery', 'lodash', 'requirejs']);
-	grunt.registerTask('default', ['build']);
+	grunt.registerTask('optimize', ['imagemin']);
+	grunt.registerTask('default', ['build', 'optimize']);
 };

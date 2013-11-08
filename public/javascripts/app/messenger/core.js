@@ -5,11 +5,20 @@
 
 define([
 	'app/core',
-	'./views/conversation'
+	'./views/conversation',
+	'./tools'
 ], function(App, Conversation) {
 
 	var Messenger = App.module("Messenger", function() {
 		this.startWithParent = true;
+	});
+
+	App.commands.setHandler('messenger:open', function() {
+		$("body").addClass('show-chat');
+	});
+
+	App.commands.setHandler('messenger:close', function() {
+		$("body").removeClass('show-chat');
 	});
 
 	Messenger.on('start', function() {
@@ -19,7 +28,7 @@ define([
 	});
 
 	Messenger.on('stop', function() {
-		App.modal.reset();
+		App.sidebar.reset();
 	});
 
 	return Messenger;
