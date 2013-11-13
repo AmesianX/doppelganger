@@ -1,6 +1,6 @@
 /**
- * @name Navigation
- * @desc The main presentation logic
+ * @name Utility Belt
+ * @desc A registerable toolbar
  */
 
 define([
@@ -8,24 +8,24 @@ define([
 	'./collections/tools',
 	'./views/utility'
 ], function(App, Tools, Utility) {
-	var Navigation = App.module("Navigation", function() {
+	var UtilityBelt = App.module("UtilityBelt", function() {
 		this.startWithParent = false;
 		this.tools = new Tools([]);
 	});
 
-	Navigation.on('start', function() {
+	UtilityBelt.on('start', function() {
 		App.navigation.show(new Utility({
 			collection: this.tools
 		}));
 	});
 
- 	Navigation.on('stop', function() {
+ 	UtilityBelt.on('stop', function() {
 		App.navigation.reset();
 	});
 
-	Navigation.register = function(tool) {
+	UtilityBelt.register = function(tool) {
 		this.tools.add(tool);
 	};
 
-	return Navigation;
+	return UtilityBelt;
 });

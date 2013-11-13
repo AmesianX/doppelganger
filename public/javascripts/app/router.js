@@ -10,7 +10,7 @@ define(function() {
 			var App = require('app/core');
 
 			App.Connection.stop();
-			App.Navigation.stop();
+			App.UtilityBelt.stop();
 			App.Messenger.stop();
 
 			App.Gatekeeper.start();
@@ -22,7 +22,7 @@ define(function() {
 			App.Gatekeeper.stop();
 
 			App.Messenger.start();
-			App.Navigation.start();
+			App.UtilityBelt.start();
 			App.Connection.start();
 		}
 	});

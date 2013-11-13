@@ -2,8 +2,8 @@
  * @name Connection Tools
  */
 
-define(['app/navigation/core'], function(Nav) {
-	Nav.register({
+define(['app/utilitybelt/core'], function(Belt) {
+	Belt.register({
 		name: 'mute',
 		icon: '&#xe602;',
 		description: 'Mute Microphone',
@@ -11,7 +11,7 @@ define(['app/navigation/core'], function(Nav) {
 		stop: 'connection:unmute'
 	});
 
-	Nav.register({
+	Belt.register({
 		name: 'pause',
 		icon: '&#xe603;',
 		description: 'Pause Video',

@@ -2,8 +2,8 @@
  * @name Messenger Tools
  */
 
-define(['app/navigation/core'], function(Nav) {
-	Nav.register({
+define(['app/utilitybelt/core'], function(Belt) {
+	Belt.register({
 		name: 'chat',
 		icon: '&#xe600;',
 		description: 'Chat',
